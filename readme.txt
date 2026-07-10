@@ -118,8 +118,19 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Source Code ==
 
-You can find the source code, report bugs, and contribute to the development of this plugin on our GitHub repository:
-[**B Iframe on GitHub**](https://github.com/bPlugins/iframe-7)
+The complete, un-minified source code for this plugin's JavaScript and CSS is included in the `src/` directory of the plugin, and is also available on GitHub:
+[**B Iframe on GitHub**](https://github.com/bPlugins/b-iframe)
+
+= Build instructions =
+
+The compiled files in `build/` are generated from `src/` using [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) (webpack). To build them yourself:
+
+1. Install [Node.js](https://nodejs.org/) (18+) and npm.
+2. From the plugin directory, run `npm install` to install the build dependencies (see `package.json`).
+3. Run `npm run build` to compile `src/` into the minified files in `build/`.
+4. Run `npm start` instead for a development build with file watching.
+
+The build tooling is configured in `package.json`, `webpack.config.js`, and `.eslintrc.js`.
 
 
 == Third-Party Libraries ==
