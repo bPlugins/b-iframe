@@ -16,7 +16,7 @@
 		"i18n-mo": "wp i18n make-mo languages/",
 		"i18n": "npm run i18n-pot && npm run i18n-json && npm run i18n-mo",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"zip": "zip -r b-iframe.zip build src languages b-iframe.php readme.txt package.json webpack.config.js .eslintrc.js",
+		"zip": "rm -f ../b-iframe.zip && cd .. && zip -r b-iframe.zip b-iframe/build b-iframe/src b-iframe/languages b-iframe/b-iframe.php b-iframe/readme.txt b-iframe/package.json b-iframe/webpack.config.js -x '*/node_modules/*' '*/.git/*' '*/.DS_Store'",
 		"bundle": "gulp clean && npm run lint && npm run build && npm run i18n && find . -name '.DS_Store' -delete && npm run zip",
 		"fs-deploy": "gulp freemius-deploy"
 	},

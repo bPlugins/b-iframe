@@ -130,7 +130,7 @@ The compiled files in `build/` are generated from `src/` using [@wordpress/scrip
 3. Run `npm run build` to compile `src/` into the minified files in `build/`.
 4. Run `npm start` instead for a development build with file watching.
 
-The build tooling is configured in `package.json`, `webpack.config.js`, and `.eslintrc.js`.
+The build tooling is configured in `package.json` and `webpack.config.js`. The full development setup, including the linting configuration, is available in the GitHub repository linked above.
 
 
 == Third-Party Libraries ==
