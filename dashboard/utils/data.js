@@ -35,7 +35,7 @@ export const dashboardInfo = (info) => {
 		uninstallNonce,
 		startButton: {
 			label: 'Start Now',
-			url: 'wp-admin/post-new.php?post_type=b-iframe'
+			url: `${adminUrl}post-new.php?post_type=b-iframe`
 		}
 	}
 }
