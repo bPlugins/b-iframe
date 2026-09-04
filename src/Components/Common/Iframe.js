@@ -26,6 +26,25 @@ const Iframe = ({ attributes, id }) => {
 		}
 	};
 
+	// YouTube refuses to play inside the editor's null-origin canvas
+	// (error 153), so preview it as a thumbnail; it plays on the live site.
+	const ytId = embedSrc.match(/youtube(?:-nocookie)?\.com\/embed\/([\w-]+)/)?.[1];
+	if (ytId) {
+		return <div className={prefix} style={{ ...ratioStyle, position: 'relative', background: '#000' }}>
+			<img
+				src={`https://i.ytimg.com/vi/${ytId}/hqdefault.jpg`}
+				alt={title}
+				style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85, display: 'block' }}
+			/>
+			<span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 64, height: 45, background: 'rgba(0,0,0,.75)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+				<span style={{ width: 0, height: 0, borderStyle: 'solid', borderWidth: '9px 0 9px 16px', borderColor: 'transparent transparent transparent #fff', marginLeft: 3 }}></span>
+			</span>
+			<span style={{ position: 'absolute', left: 8, bottom: 8, padding: '3px 8px', background: 'rgba(0,0,0,.75)', color: '#fff', fontSize: 11 }}>
+				YouTube preview — plays on the live site
+			</span>
+		</div>;
+	}
+
 	return <div className={prefix} style={ratioStyle}>
 		<iframe
 			src={embedSrc}
