@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 
 import Header from '../../../bpl-tools/Admin/Header';
@@ -11,6 +12,17 @@ const navigation = [
 const Layout = (props) => {
 
 	const location = useLocation();
+
+	// The shared Overview card points "View Demos" at the external landing
+	// page; send it to this dashboard's Demos tab instead.
+	useEffect(() => {
+		const btn = document.querySelector('.bPlDashboard a.secondaryBtn');
+		if (btn) {
+			btn.setAttribute('href', '#/demos');
+			btn.removeAttribute('target');
+			btn.removeAttribute('rel');
+		}
+	});
 
 	return <div className='bPlDashboard'>
 		<Header {...props}>
