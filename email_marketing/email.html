@@ -4,72 +4,126 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>iFrame, our new free embed plugin</title>
+<!--
+  BEFORE SENDING:
+  1. Replace {{unsubscribe_url}} with your ESP's merge tag.
+  2. The two screenshots use src="assets/…" for local preview. Upload
+     email_marketing/assets/*.png somewhere public (or let us commit them
+     to ps.w.org) and replace those two src values with absolute URLs —
+     email clients cannot load relative paths.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+<style>
+  /* Only clients that respect <style> (Apple Mail etc.) see this; everything critical is inline. */
+  .sg { font-family: 'Space Grotesk', -apple-system, 'Segoe UI', Arial, sans-serif !important; }
+  @media (max-width: 620px) {
+    .feature-img, .feature-txt { display: block !important; width: 100% !important; }
+    .feature-img { padding: 0 0 14px 0 !important; }
+  }
+</style>
 </head>
-<body style="margin:0;padding:0;background:#f2f5fb;">
+<body style="margin:0;padding:0;background:#EEF3FB;">
 <!-- Preheader (hidden in the body, shown next to the subject in inboxes) -->
 <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
   Paste a link, pick a ratio, done. Videos, maps, sites and docs in responsive iframes, free on WordPress.org.
 </div>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f2f5fb;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EEF3FB;">
   <tr><td align="center" style="padding:32px 16px;">
 
-    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:10px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
+    <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #E4EAF5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;">
 
       <!-- Header -->
-      <tr><td style="background:#070127;padding:22px 32px;">
-        <span style="font-size:19px;font-weight:700;color:#ffffff;">bPlugins</span>
-        <span style="font-size:13px;color:#9aa5bd;"> &nbsp;·&nbsp; plugin news</span>
+      <tr><td style="background:#070127;padding:18px 32px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td align="left">
+            <img src="https://ps.w.org/b-iframe/assets/icon-128x128.png" width="34" height="34" alt="iFrame" style="display:inline-block;vertical-align:middle;border-radius:7px;" />
+            <span class="sg" style="font-size:19px;font-weight:700;color:#ffffff;vertical-align:middle;">&nbsp;bPlugins</span>
+          </td>
+          <td align="right"><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#9aa5bd;">Plugin news</span></td>
+        </tr></table>
       </td></tr>
 
-      <!-- Hero -->
-      <tr><td style="padding:36px 32px 8px;">
-        <p style="margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#146EF5;">New free plugin</p>
-        <h1 style="margin:0 0 14px;font-size:28px;line-height:1.25;color:#070127;">Embeds that stop breaking on phones</h1>
-        <p style="margin:0;font-size:15px;line-height:1.65;color:#485781;">
-          Hi there,
-        </p>
-        <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:#485781;">
+      <!-- Brand banner (hosted on WordPress.org) -->
+      <tr><td>
+        <a href="https://wordpress.org/plugins/b-iframe/" style="display:block;">
+          <img src="https://ps.w.org/b-iframe/assets/banner-772x250.png" width="600" alt="iFrame — Embed anything. Fit everywhere." style="display:block;width:100%;height:auto;border:0;" />
+        </a>
+      </td></tr>
+
+      <!-- Hero copy -->
+      <tr><td style="padding:34px 32px 8px;">
+        <p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#146EF5;">New free plugin</p>
+        <h1 class="sg" style="margin:0 0 16px;font-size:29px;line-height:1.22;letter-spacing:-0.5px;color:#070127;">Embeds that stop breaking on phones</h1>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:#485781;">Hi there,</p>
+        <p style="margin:14px 0 0;font-size:15px;line-height:1.7;color:#485781;">
           You are getting this because you use one of our plugins, and we just released something we think you will actually use:
           <strong style="color:#070127;">iFrame</strong>, a free plugin for putting videos, maps, playlists, design files and whole websites inside your pages, in iframes that behave.
         </p>
       </td></tr>
 
-      <!-- Feature list -->
-      <tr><td style="padding:26px 32px 6px;">
-
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-          <tr><td style="padding:0 0 20px;">
-            <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#070127;">Paste a link, get a working embed</p>
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#485781;">No more hunting for "embed URLs". Paste a normal YouTube, Vimeo, Google Maps, Spotify, Loom or Figma page link and iFrame rewrites it to the form that actually plays. YouTube even switches to the privacy friendly no-cookie player.</p>
-          </td></tr>
-          <tr><td style="padding:0 0 20px;">
-            <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#070127;">It fits every screen</p>
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#485781;">Pick an aspect ratio (16:9, 4:3, 1:1, 9:16, 21:9 or your own) and the embed scales with the page instead of overflowing on mobile. Your desktop layout and your phone layout finally agree.</p>
-          </td></tr>
-          <tr><td style="padding:0 0 20px;">
-            <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#070127;">Build once, embed everywhere</p>
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#485781;">The ShortCode Generator gives every iframe its own shortcode, like <span style="font-family:Menlo,Consolas,monospace;font-size:13px;background:#eef4fe;padding:1px 6px;border-radius:4px;color:#0B4AC0;">[b-iframe id="123"]</span>. Paste it into posts, widgets, Elementor or your theme. Edit in one place, it updates everywhere.</p>
-          </td></tr>
-          <tr><td style="padding:0 0 6px;">
-            <p style="margin:0 0 4px;font-size:16px;font-weight:700;color:#070127;">Fast and search friendly</p>
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#485781;">Embeds are rendered server side, so search engines see them, nothing jumps while the page loads, and the script we ship to your visitors is a few KB of plain JavaScript. The editor even warns you when a site refuses to be embedded, before your visitors meet an empty box.</p>
+      <!-- Feature 1: conversion (text only, with the before/after) -->
+      <tr><td style="padding:28px 32px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5F9FF;border:1px solid #E4EAF5;border-radius:10px;">
+          <tr><td style="padding:22px 24px;">
+            <p class="sg" style="margin:0 0 6px;font-size:17px;font-weight:700;color:#070127;">Paste a link, get a working embed</p>
+            <p style="margin:0 0 14px;font-size:14.5px;line-height:1.65;color:#485781;">No more hunting for "embed URLs". Paste a normal YouTube, Vimeo, Google Maps, Spotify, Loom or Figma page link and iFrame rewrites it to the form that actually plays.</p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+              <td style="font-family:Menlo,Consolas,monospace;font-size:11.5px;color:#7A8397;background:#ffffff;border:1px solid #E4EAF5;border-radius:6px;padding:9px 12px;">youtube.com/watch?v=…</td>
+              <td width="34" align="center" style="color:#FF7A00;font-size:15px;font-weight:700;">&rarr;</td>
+              <td style="font-family:Menlo,Consolas,monospace;font-size:11.5px;color:#0B4AC0;background:#EAF2FE;border:1px solid #C9DDFB;border-radius:6px;padding:9px 12px;">youtube-nocookie.com/embed/…</td>
+            </tr></table>
           </td></tr>
         </table>
+      </td></tr>
 
+      <!-- Feature 2: responsive sizing (screenshot left) -->
+      <tr><td style="padding:28px 32px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td class="feature-img" width="250" valign="top" style="padding:0 22px 0 0;">
+            <img src="assets/screen-sizing.png" width="250" alt="The Sizing panel with aspect-ratio presets" style="display:block;width:250px;max-width:100%;height:auto;border:1px solid #E4EAF5;border-radius:8px;" />
+          </td>
+          <td class="feature-txt" valign="middle">
+            <p class="sg" style="margin:0 0 6px;font-size:17px;font-weight:700;color:#070127;">It fits every screen</p>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#485781;">Pick an aspect ratio — 16:9, 4:3, 1:1, 9:16, 21:9 or your own — and the embed scales with the page instead of overflowing on mobile. Fixed sizes still work when you need them.</p>
+          </td>
+        </tr></table>
+      </td></tr>
+
+      <!-- Feature 3: shortcode (screenshot right) -->
+      <tr><td style="padding:28px 32px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+          <td class="feature-txt" valign="middle" style="padding:0 22px 0 0;">
+            <p class="sg" style="margin:0 0 6px;font-size:17px;font-weight:700;color:#070127;">Build once, embed everywhere</p>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#485781;">Every iframe you build gets its own shortcode with one-click copy, like <span style="font-family:Menlo,Consolas,monospace;font-size:12.5px;background:#EAF2FE;padding:1px 6px;border-radius:4px;color:#0B4AC0;">[b-iframe id="123"]</span>. Paste it into posts, widgets, Elementor or your theme. Edit in one place, it updates everywhere.</p>
+          </td>
+          <td class="feature-img" width="250" valign="top">
+            <img src="assets/screen-shortcode.png" width="250" alt="The editor shows the shortcode with a Copy button" style="display:block;width:250px;max-width:100%;height:auto;border:1px solid #E4EAF5;border-radius:8px;" />
+          </td>
+        </tr></table>
+      </td></tr>
+
+      <!-- Feature 4: performance strip -->
+      <tr><td style="padding:28px 32px 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-left:3px solid #FF7A00;">
+          <tr><td style="padding:2px 0 2px 18px;">
+            <p class="sg" style="margin:0 0 6px;font-size:17px;font-weight:700;color:#070127;">Fast and search friendly</p>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#485781;">Embeds are rendered server side: search engines see them, nothing jumps while the page loads, and the script your visitors get is a few KB of plain JavaScript. The editor even warns you when a site refuses to be embedded.</p>
+          </td></tr>
+        </table>
       </td></tr>
 
       <!-- CTA -->
-      <tr><td align="center" style="padding:26px 32px 10px;">
-        <a href="https://wordpress.org/plugins/b-iframe/" style="display:inline-block;background:#146EF5;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:13px 34px;border-radius:8px;">Get iFrame free on WordPress.org</a>
+      <tr><td align="center" style="padding:34px 32px 12px;">
+        <a href="https://wordpress.org/plugins/b-iframe/" class="sg" style="display:inline-block;background:#146EF5;color:#ffffff;font-size:15px;font-weight:700;text-decoration:none;padding:14px 36px;border-radius:8px;">Get iFrame free on WordPress.org</a>
         <p style="margin:14px 0 0;font-size:13.5px;color:#7A8397;">
-          Prefer to see it first? <a href="https://iframe.bplugins.com/" style="color:#146EF5;text-decoration:none;">Visit the live demo page</a>
+          Prefer to see it first? <a href="https://iframe.bplugins.com/" style="color:#146EF5;text-decoration:none;font-weight:600;">Visit the live demo page</a>
         </p>
       </td></tr>
 
       <!-- Sign-off -->
-      <tr><td style="padding:22px 32px 30px;">
-        <p style="margin:0;font-size:14.5px;line-height:1.65;color:#485781;">
+      <tr><td style="padding:20px 32px 32px;">
+        <p style="margin:0;font-size:14.5px;line-height:1.7;color:#485781;">
           It is completely free, no locked features. If you try it and something bugs you, reply to this email or post in the
           <a href="https://wordpress.org/support/plugin/b-iframe/" style="color:#146EF5;text-decoration:none;">support forum</a>;
           we read everything and it genuinely shapes what we build next.
@@ -78,15 +132,18 @@
       </td></tr>
 
       <!-- Footer -->
-      <tr><td style="background:#f7f9fd;border-top:1px solid #e4eaf5;padding:18px 32px;">
-        <p style="margin:0;font-size:12px;line-height:1.6;color:#9aa5bd;">
-          You are receiving this because you installed a bPlugins plugin.
-          <a href="{{unsubscribe_url}}" style="color:#7A8397;">Unsubscribe</a> ·
-          <a href="https://bplugins.com" style="color:#7A8397;">bplugins.com</a>
+      <tr><td style="background:#070127;padding:20px 32px;">
+        <p style="margin:0;font-size:12px;line-height:1.7;color:#9aa5bd;">
+          You are receiving this because you installed a bPlugins plugin.<br />
+          <a href="{{unsubscribe_url}}" style="color:#c7cede;">Unsubscribe</a> &nbsp;·&nbsp;
+          <a href="https://bplugins.com" style="color:#c7cede;">bplugins.com</a> &nbsp;·&nbsp;
+          <a href="https://wordpress.org/support/plugin/b-iframe/" style="color:#c7cede;">Support</a>
         </p>
       </td></tr>
 
     </table>
+
+    <p style="margin:16px 0 0;font-size:11.5px;color:#9aa5bd;font-family:-apple-system,'Segoe UI',Arial,sans-serif;">© bPlugins · Dhaka, Bangladesh</p>
 
   </td></tr>
 </table>
