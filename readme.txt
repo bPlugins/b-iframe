@@ -1,4 +1,4 @@
-=== iFrame – Embed Any Website Content Without the Hassle ===
+=== iFrame – Responsive Embeds for Videos, Maps, Websites & Docs ===
 Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://gum.co/wpdonate/
 Tags: block, iframe, website embed, embed, url embed

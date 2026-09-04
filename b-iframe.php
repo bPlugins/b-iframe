@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: iFrame – Embed Any Website Content Without the Hassle
+ * Plugin Name: iFrame – Responsive Embeds for Videos, Maps, Websites & Docs
  * Description: Responsive iframe embedding for videos, live website, and more..
  * Version: 1.1.0
  * Author: bPlugins
