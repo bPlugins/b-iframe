@@ -10,6 +10,10 @@ const plugins = defaultConfig.plugins.filter(p => {
 
 module.exports = {
 	...defaultConfig,
+	entry: {
+		...defaultConfig.entry(),
+		'dashboard': './dashboard/admin.js'
+	},
 	plugins: [
 		...plugins,
 		new ESLintPlugin()
