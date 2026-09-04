@@ -9,7 +9,7 @@ Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-iFrame is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes
+Embed videos, maps, sites & docs in responsive iframes. YouTube, Vimeo, Maps links auto-convert. Aspect-ratio sizing, block & shortcode.
 
 == Description ==
 
