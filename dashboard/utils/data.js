@@ -157,6 +157,15 @@ export const welcomeInfo = (adminUrl = '') => ({
 
 	changelogs: [
 		{
+			version: '1.1.1 - 4 September, 2026',
+			type: 'update',
+			list: [
+				'<strong>New:</strong> The editor shows each reusable iframe\'s shortcode with one-click copy.',
+				'<strong>Improved:</strong> YouTube embeds preview as a thumbnail in the editor instead of a player error.',
+				'<strong>Improved:</strong> Dashboard welcome banner and working Start Now / View Demos buttons.',
+			]
+		},
+		{
 			version: '1.1.0 - 4 September, 2026',
 			type: 'new',
 			list: [

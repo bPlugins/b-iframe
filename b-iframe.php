@@ -2,7 +2,7 @@
 /**
  * Plugin Name: iFrame – Responsive Embeds for Videos, Maps, Websites & Docs
  * Description: Responsive iframe embedding for videos, live website, and more..
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -16,7 +16,7 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
  
 // Constant
-define( 'BIFRM_VERSION', '1.1.0' );
+define( 'BIFRM_VERSION', '1.1.1' );
 define( 'BIFRM_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'BIFRM_DIR_PATH', plugin_dir_path( __FILE__ ) );
 

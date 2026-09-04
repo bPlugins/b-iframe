@@ -4,7 +4,7 @@ Donate link: https://gum.co/wpdonate/
 Tags: block, iframe, website embed, embed, url embed
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -138,6 +138,12 @@ Links to known providers are rewritten to the URL those providers require for em
 That site sends an X-Frame-Options or Content-Security-Policy header that forbids being shown inside other pages. Browsers enforce it, so visitors would see an empty box. Use the site's own embed or share URL if it offers one.
 
 == Changelog ==
+
+= 1.1.1 =
+* New: The editor shows each reusable iframe's shortcode above the block, with one-click copy.
+* Improved: YouTube embeds preview as a thumbnail in the editor — the live player refuses to run inside the editor canvas and looked like a broken embed.
+* Improved: Dashboard polish — welcome banner, working Start Now and View Demos buttons, updated tutorial video.
+* Improved: Live demo link in the readme.
 
 = 1.1.0 =
 * New: Optional usage tracking via Freemius — asked once, only active if you opt in.
