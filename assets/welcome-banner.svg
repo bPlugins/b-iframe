@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <!--
+    iFrame — dashboard welcome banner (16:9).
+    bPlugins brand: #146EF5 blue, #FF7A00 orange, #070127 navy.
+    Subtle CSS loop, frozen under prefers-reduced-motion.
+  -->
+  <defs>
+    <style>
+      svg { --dur: 4.6s; }
+      .sg { font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; }
+      .chev-l { animation: nudge-l var(--dur) ease-in-out infinite; }
+      .chev-r { animation: nudge-r var(--dur) ease-in-out infinite; }
+      .handle { transform-box: fill-box; transform-origin: 50% 50%; animation: pulse var(--dur) ease-in-out infinite; }
+      .ratio { animation: swap var(--dur) ease-in-out infinite; }
+      @keyframes nudge-l { 0%, 100% { transform: translateX(0); } 30% { transform: translateX(-8px); } 60% { transform: translateX(0); } }
+      @keyframes nudge-r { 0%, 100% { transform: translateX(0); } 30% { transform: translateX(8px); } 60% { transform: translateX(0); } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 30% { transform: scale(1.25); } 55% { transform: scale(1); } }
+      @keyframes swap { 0%, 45%, 100% { opacity: 1; } 55%, 90% { opacity: 0.25; } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#F2F7FF"/>
+      <stop offset="1" stop-color="#E2ECFD"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#146EF5"/>
+      <stop offset="1" stop-color="#0B3FA8"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0B3FA8" flood-opacity="0.26"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- decorative shapes -->
+  <g fill="#146EF5" fill-opacity="0.06">
+    <circle cx="1090" cy="80" r="120"/>
+    <circle cx="1130" cy="600" r="150"/>
+  </g>
+  <circle cx="960" cy="560" r="56" fill="#FF7A00" fill-opacity="0.08"/>
+
+  <!-- ICON ZONE: browser with responsive embed -->
+  <g transform="translate(110,170)" filter="url(#shadow)">
+    <rect width="336" height="336" fill="url(#tile)"/>
+    <g transform="scale(1.3125)">
+      <rect x="28" y="36" width="200" height="184" fill="#ffffff"/>
+      <rect x="28" y="36" width="200" height="34" fill="#070127"/>
+      <circle cx="46" cy="53" r="6" fill="#FF7A00"/>
+      <circle cx="66" cy="53" r="6" fill="#ffffff" fill-opacity="0.55"/>
+      <circle cx="86" cy="53" r="6" fill="#ffffff" fill-opacity="0.3"/>
+      <rect x="104" y="45" width="112" height="16" fill="#ffffff" fill-opacity="0.18"/>
+      <rect x="52" y="88" width="152" height="86" fill="#146EF5"/>
+      <path class="chev-l" d="M96 114 L80 131 L96 148" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="square"/>
+      <path class="chev-r" d="M160 114 L176 131 L160 148" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="square"/>
+      <rect x="122" y="126" width="12" height="12" fill="#ffffff" transform="rotate(20 128 132)"/>
+      <rect class="handle" x="192" y="162" width="24" height="24" fill="#FF7A00"/>
+      <rect x="52" y="192" width="152" height="10" fill="#070127" fill-opacity="0.18"/>
+      <rect x="52" y="207" width="96" height="10" fill="#070127" fill-opacity="0.1"/>
+    </g>
+  </g>
+
+  <!-- MESSAGE ZONE (x >= 680 keeps the dashboard's centred play button clear) -->
+  <g class="sg">
+    <rect x="660" y="150" width="252" height="40" fill="#146EF5" fill-opacity="0.10"/>
+    <text x="786" y="177" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="3" fill="#0B3FA8">RESPONSIVE EMBEDS</text>
+
+    <text x="660" y="264" font-size="54" font-weight="700" fill="#070127" letter-spacing="-1">Embed anything.</text>
+    <text x="660" y="322" font-size="54" font-weight="700" fill="#070127" letter-spacing="-1">Fit everywhere.</text>
+
+    <rect x="663" y="354" width="100" height="6" fill="#FF7A00"/>
+    <text x="663" y="392" font-size="22" font-weight="500" fill="#485781">Paste a link, pick a ratio, done.</text>
+
+    <!-- ratio chips -->
+    <g font-size="18" font-weight="700" text-anchor="middle">
+      <g class="ratio">
+        <rect x="663" y="432" width="78" height="40" fill="#146EF5"/>
+        <text x="702" y="459" fill="#ffffff">16:9</text>
+      </g>
+      <rect x="753" y="432" width="78" height="40" fill="#ffffff" stroke="#dcdcde"/>
+      <text x="792" y="459" fill="#485781">4:3</text>
+      <rect x="843" y="432" width="78" height="40" fill="#ffffff" stroke="#dcdcde"/>
+      <text x="882" y="459" fill="#485781">1:1</text>
+      <rect x="933" y="432" width="78" height="40" fill="#ffffff" stroke="#dcdcde"/>
+      <text x="972" y="459" fill="#485781">9:16</text>
+      <rect x="1023" y="432" width="78" height="40" fill="#ffffff" stroke="#dcdcde"/>
+      <text x="1062" y="459" fill="#485781">21:9</text>
+    </g>
+  </g>
+</svg>

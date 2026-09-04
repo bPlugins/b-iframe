@@ -159,6 +159,7 @@ if ( !class_exists( __NAMESPACE__ . '\PostType' ) ) {
 			echo esc_attr( wp_json_encode( [
 				'version'               => BIFRM_VERSION,
 				'adminUrl'              => admin_url(),
+				'pluginUrl'             => BIFRM_DIR_URL,
 				'deleteDataOnUninstall' => (bool) get_option( 'bifrmDeleteDataOnUninstall', false ),
 				'uninstallNonce'        => wp_create_nonce( 'bifrm_save_uninstall_option' ),
 			] ) );

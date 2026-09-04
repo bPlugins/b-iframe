@@ -3,7 +3,7 @@ const slug = 'b-iframe';
 const frameIcon = (<svg stroke='#000' fill='#000' strokeWidth='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'><path fillRule='evenodd' clipRule='evenodd' d='M1 6C1 4.34315 2.34315 3 4 3H20C21.6569 3 23 4.34315 23 6V18C23 19.6569 21.6569 21 20 21H4C2.34315 21 1 19.6569 1 18V6ZM4 5H20C20.5523 5 21 5.44772 21 6V8H3V6C3 5.44772 3.44772 5 4 5ZM3 10V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V10H3Z' fill='currentColor'></path><path d='M9.5 13L7.5 15L9.5 17' stroke='currentColor' strokeWidth='1.5' fill='none' strokeLinecap='round'></path><path d='M14.5 13L16.5 15L14.5 17' stroke='currentColor' strokeWidth='1.5' fill='none' strokeLinecap='round'></path></svg>);
 
 export const dashboardInfo = (info) => {
-	const { version, adminUrl, deleteDataOnUninstall, uninstallNonce } = info;
+	const { version, adminUrl, pluginUrl, deleteDataOnUninstall, uninstallNonce } = info;
 
 	return {
 		name: 'iFrame',
@@ -20,6 +20,7 @@ export const dashboardInfo = (info) => {
 		media: {
 			logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
 			banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
+			thumbnail: `${pluginUrl}assets/welcome-banner.svg`,
 			video: 'https://youtu.be/Hfm94aHAbYQ',
 			isYoutube: true,
 		},
