@@ -1,0 +1,18 @@
+/* [b-iframe id=…] copy field in the ShortCode Generator list. */
+.bPlAdminShortcode { display: inline-block; margin: 0 auto; position: relative; }
+.bPlAdminShortcode input { background-color: #4527a4; border: none; border-radius: 3px; color: #fff; cursor: pointer; outline: none; padding: 4px 10px; text-align: center; }
+.bPlAdminShortcode .tooltip { background-color: #555; border-radius: 6px; bottom: 150%; color: #fff; left: 50%; margin-left: -75px; opacity: 0; padding: 5px; position: absolute; text-align: center; transition: opacity .3s; visibility: hidden; width: 140px; z-index: 1; }
+.bPlAdminShortcode .tooltip:after { border: 5px solid transparent; border-top-color: #555; content: ""; left: 50%; margin-left: -5px; position: absolute; top: 100%; }
+.bPlAdminShortcode:hover .tooltip { opacity: 1; visibility: visible; }
+
+/* Help & Demos page. */
+.bifrmHelp__version { font-size: 13px; font-weight: 400; color: #646970; }
+.bifrmHelp__lede { max-width: 72ch; font-size: 14px; }
+.bifrmHelp__grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 16px; align-items: start; margin-top: 16px; }
+@media (max-width: 960px) { .bifrmHelp__grid { grid-template-columns: 1fr; } }
+.bifrmHelp__main, .bifrmHelp__side { display: flex; flex-direction: column; gap: 16px; }
+.bifrmHelp__card { background: #fff; border: 1px solid #dcdcde; padding: 18px 20px; box-shadow: 0 1px 1px rgba(0, 0, 0, .04); }
+.bifrmHelp__card h2 { margin-top: 0; font-size: 16px; }
+.bifrmHelp__code { display: block; margin: 8px 0 14px; padding: 8px 10px; background: #f0f0f1; font-size: 12px; overflow-x: auto; }
+.bifrmHelp__list { margin: 0; padding-left: 18px; }
+.bifrmHelp__card .bIframe { max-width: 100%; }

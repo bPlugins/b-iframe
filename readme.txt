@@ -20,6 +20,7 @@ B Iframe is a powerful WordPress Gutenberg block plugin that revolutionizes the 
 - **Smart URL conversion**: Paste a normal YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom or Figma page link — it is converted to the embeddable form automatically (YouTube uses the privacy-enhanced youtube-nocookie.com player).
 - **Server-side rendering**: The iframe is real HTML — visible to search engines and visitors without JavaScript, with no layout shift.
 - **Embed check**: The editor warns you when a site refuses to be embedded, before your visitors see an empty box.
+- **ShortCode Generator**: Build reusable iframes in the block editor and place them anywhere with [b-iframe id="123"].
 - **Title**: Specify the title for the iframe.
 - **Loading Behavior**: Configure the loading behavior.
 - **Full Screen**: Activate Full Screen to enable the iframe in full-screen mode.
@@ -130,6 +131,8 @@ That site sends an X-Frame-Options or Content-Security-Policy header that forbid
 * New: Correct iframe permissions (autoplay, fullscreen, picture-in-picture) and referrer policy per provider.
 * New: The editor warns when a site's headers forbid embedding.
 * Improved: The iframe is now rendered server-side — visible without JavaScript, indexable, no layout shift; the frontend script is ~90% smaller.
+* New: ShortCode Generator — build reusable iframes in the block editor (B Iframe menu) and embed them anywhere with [b-iframe id="123"]; edit once, updates everywhere.
+* New: Help & Demos page with a live example and full shortcode reference.
 * Fixed: The [iframe] shortcode was never loaded and did not work.
 * Fixed: allowfullscreen was emitted in a form browsers treat as enabled even when turned off.
 

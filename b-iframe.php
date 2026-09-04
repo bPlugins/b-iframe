@@ -24,6 +24,7 @@ define( 'BIFRM_DIR_PATH', plugin_dir_path( __FILE__ ) );
 require_once BIFRM_DIR_PATH . 'includes/Converter.php';
 require_once BIFRM_DIR_PATH . 'includes/FrameCheck.php';
 require_once BIFRM_DIR_PATH . 'includes/ShortCode.php';
+require_once BIFRM_DIR_PATH . 'includes/PostType.php';
 
 if( !class_exists( 'BIFRMPlugin' ) ){
 	class BIFRMPlugin {
