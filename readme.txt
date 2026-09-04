@@ -3,8 +3,8 @@ Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://gum.co/wpdonate/
 Tags: block, iframe, website embed, embed, url embed
 Requires at least: 6.5
-Tested up to: 7.0
-Stable tag: 1.0.0
+Tested up to: 7.1
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -16,6 +16,10 @@ B Iframe is a powerful WordPress Gutenberg block plugin that revolutionizes the 
 B Iframe is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes. With features like customizable titles, versatile loading behaviors, full-screen activation, and precise layout controls, B Iframe offers an intuitive and dynamic solution for integrating iframes into your content. Elevate the visual appeal of your iframes with additional design options, allowing you to apply borders and shadows effortlessly.
 
 = Features =
+- **Responsive sizing**: Keep an aspect ratio (16:9, 4:3, 1:1, 9:16, 21:9 or custom) so the iframe scales with the page, or set a fixed height.
+- **Smart URL conversion**: Paste a normal YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom or Figma page link — it is converted to the embeddable form automatically (YouTube uses the privacy-enhanced youtube-nocookie.com player).
+- **Server-side rendering**: The iframe is real HTML — visible to search engines and visitors without JavaScript, with no layout shift.
+- **Embed check**: The editor warns you when a site refuses to be embedded, before your visitors see an empty box.
 - **Title**: Specify the title for the iframe.
 - **Loading Behavior**: Configure the loading behavior.
 - **Full Screen**: Activate Full Screen to enable the iframe in full-screen mode.
@@ -110,7 +114,25 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 2. Settings
 
 
+= Why did my pasted link change? =
+
+Links to known providers are rewritten to the URL those providers require for embedding (for example youtube.com/watch links become youtube-nocookie.com/embed links). Unrecognised links are left untouched.
+
+= Why does the editor say a site does not allow embedding? =
+
+That site sends an X-Frame-Options or Content-Security-Policy header that forbids being shown inside other pages. Browsers enforce it, so visitors would see an empty box. Use the site's own embed or share URL if it offers one.
+
 == Changelog ==
+
+= 1.1.0 =
+* New: Aspect-ratio sizing mode — the iframe keeps its ratio and scales with the page width.
+* New: Page links from YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom and Figma are converted to their embeddable form automatically (block and shortcode).
+* New: Correct iframe permissions (autoplay, fullscreen, picture-in-picture) and referrer policy per provider.
+* New: The editor warns when a site's headers forbid embedding.
+* Improved: The iframe is now rendered server-side — visible without JavaScript, indexable, no layout shift; the frontend script is ~90% smaller.
+* Fixed: The [iframe] shortcode was never loaded and did not work.
+* Fixed: allowfullscreen was emitted in a form browsers treat as enabled even when turned off.
+
 
 = 1.0.0 =
 * Initial Release

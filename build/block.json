@@ -23,6 +23,14 @@
       "type": "string",
       "default": ""
     },
+    "sizing": {
+      "type": "string",
+      "default": "fixed"
+    },
+    "ratio": {
+      "type": "string",
+      "default": "16/9"
+    },
     "title": {
       "type": "string",
       "default": "Iframe title"
