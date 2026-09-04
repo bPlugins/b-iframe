@@ -1,0 +1,11 @@
+Suggested subject lines (pick one, A/B test if your ESP allows):
+
+1. New from bPlugins: embeds that stop breaking on phones
+2. Paste a link, get a working embed (new free plugin)
+3. Your embeds overflow on mobile. This fixes that, free.
+4. iFrame: videos, maps and sites that fit every screen
+5. We built a free plugin that fixes broken embeds
+
+Preheader (pairs with any of the above):
+Paste a link, pick a ratio, done. Videos, maps, sites and docs in
+responsive iframes, free on WordPress.org.

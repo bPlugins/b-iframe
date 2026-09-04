@@ -1,0 +1,47 @@
+Subject: New from bPlugins: embeds that stop breaking on phones
+
+Hi there,
+
+You are getting this because you use one of our plugins, and we just
+released something we think you will actually use: iFrame, a free plugin
+for putting videos, maps, playlists, design files and whole websites
+inside your pages, in iframes that behave.
+
+What it does for you:
+
+* Paste a link, get a working embed. No more hunting for "embed URLs".
+  Paste a normal YouTube, Vimeo, Google Maps, Spotify, Loom or Figma
+  page link and iFrame rewrites it to the form that actually plays.
+  YouTube even switches to the privacy friendly no-cookie player.
+
+* It fits every screen. Pick an aspect ratio (16:9, 4:3, 1:1, 9:16,
+  21:9 or your own) and the embed scales with the page instead of
+  overflowing on mobile.
+
+* Build once, embed everywhere. The ShortCode Generator gives every
+  iframe its own shortcode, like [b-iframe id="123"]. Paste it into
+  posts, widgets, Elementor or your theme. Edit in one place, it
+  updates everywhere.
+
+* Fast and search friendly. Embeds are rendered server side, so search
+  engines see them, nothing jumps while the page loads, and the script
+  we ship to your visitors is a few KB of plain JavaScript. The editor
+  even warns you when a site refuses to be embedded.
+
+Get it free on WordPress.org:
+https://wordpress.org/plugins/b-iframe/
+
+Prefer to see it first? Live demo page:
+https://iframe.bplugins.com/
+
+It is completely free, no locked features. If you try it and something
+bugs you, reply to this email or post in the support forum; we read
+everything and it genuinely shapes what we build next.
+
+Thanks for building with us,
+The bPlugins team
+
+--
+You are receiving this because you installed a bPlugins plugin.
+Unsubscribe: {{unsubscribe_url}}
+https://bplugins.com
