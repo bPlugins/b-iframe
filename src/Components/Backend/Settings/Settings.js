@@ -61,7 +61,7 @@ const Settings = ({ attributes, setAttributes }) => {
 
 
 					<PanelBody className='bPlPanelBody' title={__('Sizing', 'b-iframe')}>
-						<BtnGroup label={__('Mode', 'b-iframe')} value={sizing || 'fixed'} onChange={val => setAttributes({ sizing: val })} options={sizingModes} />
+						<BtnGroup label={__('Mode', 'b-iframe')} labelPosition='top' value={sizing || 'fixed'} onChange={val => setAttributes({ sizing: val })} options={sizingModes} />
 
 						{sizing === 'ratio' ? <>
 							<SelectControl
