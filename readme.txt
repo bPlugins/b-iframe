@@ -13,7 +13,15 @@ Embed videos, maps, sites & docs in responsive iframes. YouTube, Vimeo, Maps lin
 
 == Description ==
 
-iFrame is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes. With features like customizable titles, versatile loading behaviors, full-screen activation, and precise layout controls, iFrame offers an intuitive and dynamic solution for integrating iframes into your content. Elevate the visual appeal of your iframes with additional design options, allowing you to apply borders and shadows effortlessly.
+iFrame puts any web content inside your pages — videos, maps, playlists, design files, documents or whole websites — in an iframe that actually behaves.
+
+**Paste a link, get a working embed.** Normal page links from YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom and Figma are rewritten to their embeddable form automatically; YouTube even switches to the privacy-enhanced no-cookie player. No hunting for "embed URLs".
+
+**It fits every screen.** Pick an aspect ratio — 16:9, 4:3, 1:1, 9:16, 21:9 or your own — and the iframe scales with the page instead of overflowing on mobile. Prefer exact dimensions? Fixed width and height still work.
+
+**Build once, embed everywhere.** The ShortCode Generator gives every iframe you design its own shortcode like `[b-iframe id="123"]` — paste it into posts, widgets, Elementor or your theme, and edit the iframe in one place.
+
+**Fast and search-friendly.** Iframes are rendered server-side: crawlers see them, no-JavaScript visitors see them, and your layout never shifts while loading. The editor even warns you when a site refuses to be embedded, before your visitors meet an empty box.
 
 = Features =
 - **Responsive sizing**: Keep an aspect ratio (16:9, 4:3, 1:1, 9:16, 21:9 or custom) so the iframe scales with the page, or set a fixed height.
@@ -29,10 +37,10 @@ iFrame is a powerful WordPress Gutenberg block plugin that revolutionizes the wa
 
 
 = How to use =
-- First, install the iFrame plugin
-- Add the Iframe block from the block category called 'Widgets' in the Gutenberg editor.
-- You can change block settings from the right-side settings sidebar.
-- Enjoy!
+- Install and activate iFrame.
+- Add the **iFrame** block in the editor and paste any URL — recognised links convert automatically.
+- Pick a sizing mode (aspect ratio or fixed), style it, publish.
+- Or open **iFrame → Add New ShortCode** to build a reusable iframe and paste its shortcode anywhere — even `[iframe src="https://…" ratio="16:9"]` works directly.
 
 * For installation help click on Installation Tab.
 
