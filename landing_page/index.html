@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>iFrame – Responsive Embeds for WordPress | bPlugins</title>
+<meta name="description" content="Embed videos, maps, sites and docs in responsive iframes. Paste a link — YouTube, Vimeo, Maps and more convert automatically. Free on WordPress.org." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ==========================================================================
+   iFrame — product landing page.
+   Same design language as the other bPlugins landing pages:
+   Space Grotesk headings, Inter body, #146EF5 primary, #FF7A00 accent,
+   #070127 ink, soft blue tints for section bands.
+   ========================================================================== */
+:root {
+  --blue: #146EF5;
+  --blue-dark: #0B4AC0;
+  --orange: #FF7A00;
+  --ink: #070127;
+  --body: #485781;
+  --muted: #7A8397;
+  --line: #E4EAF5;
+  --tint: rgba(65, 111, 244, 0.05);
+  --white: #fff;
+  --radius: 8px;
+  --shell: 1200px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px; line-height: 1.65; color: var(--body); background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: "Space Grotesk", Inter, sans-serif; color: var(--ink); font-weight: 700; line-height: 1.14; }
+h1 { font-size: clamp(38px, 5vw, 64px); letter-spacing: -1.5px; }
+h2 { font-size: clamp(28px, 3.4vw, 42px); letter-spacing: -0.8px; }
+h3 { font-size: 19px; letter-spacing: -0.2px; }
+a { color: var(--blue); text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; background: rgba(20,110,245,.08); padding: 2px 7px; border-radius: 5px; color: var(--blue-dark); }
+.shell { width: 100%; max-width: var(--shell); margin: 0 auto; padding: 0 24px; }
+.section { padding: 84px 0; }
+.section--tint { background: var(--tint); }
+.section--ink { background: var(--ink); }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+.lede { font-size: 17px; line-height: 1.7; max-width: 62ch; }
+.center { text-align: center; }
+.center .lede { margin-left: auto; margin-right: auto; }
+
+/* Buttons ---------------------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 13px 30px; border-radius: var(--radius);
+  font-size: 15px; font-weight: 600; line-height: 1.4;
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.btn--primary { background: var(--blue); color: #fff; box-shadow: 0 8px 22px rgba(20,110,245,.30); }
+.btn--primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+.btn--ghost { border: 1.5px solid var(--line); color: var(--ink); background: #fff; }
+.btn--ghost:hover { border-color: var(--blue); color: var(--blue); }
+.btn--orange { background: var(--orange); color: #fff; box-shadow: 0 8px 22px rgba(255,122,0,.32); }
+.btn--orange:hover { transform: translateY(-1px); }
+
+/* Header ------------------------------------------------------------------ */
+.top { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .shell { display: flex; align-items: center; gap: 28px; height: 68px; }
+.brand { display: flex; align-items: center; gap: 11px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 19px; color: var(--ink); }
+.brand img { width: 34px; height: 34px; border-radius: 7px; }
+.top nav { display: flex; gap: 26px; margin-left: auto; }
+.top nav a { color: var(--body); font-size: 14.5px; font-weight: 500; }
+.top nav a:hover { color: var(--blue); }
+.top .btn { padding: 9px 20px; font-size: 14px; }
+@media (max-width: 760px) { .top nav { display: none; } }
+
+/* Hero -------------------------------------------------------------------- */
+.hero { padding: 92px 0 70px; background:
+  radial-gradient(720px 420px at 82% 4%, rgba(20,110,245,.09), transparent 62%),
+  radial-gradient(520px 380px at 8% 96%, rgba(255,122,0,.06), transparent 60%); }
+.hero .shell { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+@media (max-width: 920px) { .hero .shell { grid-template-columns: 1fr; } }
+.hero .lede { margin: 22px 0 30px; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.hero-note { margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+
+/* Browser mock */
+.mock { border-radius: 14px; overflow: hidden; box-shadow: 0 30px 70px rgba(7,1,39,.18); border: 1px solid var(--line); background: #fff; }
+.mock-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--ink); }
+.mock-bar i { width: 11px; height: 11px; border-radius: 50%; background: rgba(255,255,255,.35); }
+.mock-bar i:first-child { background: var(--orange); }
+.mock-url { flex: 1; margin-left: 8px; height: 22px; border-radius: 5px; background: rgba(255,255,255,.14); }
+.mock-body { padding: 22px; }
+.mock-embed { position: relative; aspect-ratio: 16/9; border-radius: 9px; background: linear-gradient(135deg, var(--blue), #0B3FA8); display: flex; align-items: center; justify-content: center; gap: 26px; }
+.mock-embed svg { width: 44px; height: 44px; }
+.mock-handle { position: absolute; right: -9px; bottom: -9px; width: 22px; height: 22px; border-radius: 5px; background: var(--orange); box-shadow: 0 4px 10px rgba(255,122,0,.4); }
+.mock-chips { display: flex; gap: 9px; margin-top: 18px; flex-wrap: wrap; }
+.chip { padding: 7px 15px; border-radius: 99px; border: 1.5px solid var(--line); font-size: 13px; font-weight: 600; color: var(--body); }
+.chip.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+/* Provider row ------------------------------------------------------------ */
+.providers { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; }
+.providers .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 34px; }
+.providers span { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: .2px; }
+.providers b { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink); margin-right: 8px; }
+
+/* Feature split rows ------------------------------------------------------ */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.split + .split { margin-top: 90px; }
+.split:nth-child(even) .split-media { order: -1; }
+@media (max-width: 880px) { .split { grid-template-columns: 1fr; gap: 30px; } .split:nth-child(even) .split-media { order: 0; } }
+.split h2 { margin-bottom: 16px; }
+.split p { margin-bottom: 12px; }
+.split-media { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 18px 44px rgba(7,1,39,.10); background: #fff; }
+.ticks { list-style: none; margin-top: 18px; }
+.ticks li { display: flex; gap: 11px; margin-bottom: 10px; font-size: 15.5px; }
+.ticks svg { flex: none; width: 20px; height: 20px; margin-top: 3px; }
+
+/* Convert demo card */
+.convert { border-radius: 12px; border: 1px solid var(--line); background: #fff; box-shadow: 0 18px 44px rgba(7,1,39,.10); padding: 26px; }
+.convert-row { display: flex; align-items: center; gap: 12px; }
+.convert-in, .convert-out { flex: 1; padding: 12px 14px; border-radius: 8px; font-family: "SF Mono", Menlo, monospace; font-size: 12.5px; overflow-wrap: anywhere; }
+.convert-in { border: 1.5px solid var(--line); color: var(--body); background: #fff; }
+.convert-out { background: rgba(20,110,245,.07); color: var(--blue-dark); border: 1.5px solid rgba(20,110,245,.25); }
+.convert-arrow { color: var(--orange); font-weight: 700; flex: none; }
+.convert-row + .convert-row { margin-top: 14px; }
+@media (max-width: 560px) { .convert-row { flex-direction: column; align-items: stretch; } .convert-arrow { transform: rotate(90deg); align-self: center; } }
+
+/* Steps ------------------------------------------------------------------- */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 50px; }
+@media (max-width: 880px) { .steps { grid-template-columns: 1fr; } }
+.step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 28px; }
+.step b { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; background: var(--blue); color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 16px; margin-bottom: 16px; }
+.step h3 { margin-bottom: 8px; }
+.step p { font-size: 15px; }
+
+/* Features grid ----------------------------------------------------------- */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 50px; }
+@media (max-width: 880px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px; transition: box-shadow .2s, transform .2s; }
+.card:hover { box-shadow: 0 16px 38px rgba(7,1,39,.09); transform: translateY(-2px); }
+.card .ico { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; background: rgba(20,110,245,.10); margin-bottom: 16px; }
+.card .ico svg { width: 22px; height: 22px; stroke: var(--blue); }
+.card h3 { margin-bottom: 8px; }
+.card p { font-size: 15px; }
+
+/* FAQ --------------------------------------------------------------------- */
+.faq { max-width: 780px; margin: 46px auto 0; }
+.faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 18px; font-family: "Space Grotesk", sans-serif; font-size: 17.5px; font-weight: 700; color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--blue); font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin-top: 12px; max-width: 66ch; }
+
+/* CTA --------------------------------------------------------------------- */
+.cta { text-align: center; }
+.cta h2 { color: #fff; }
+.cta .lede { color: rgba(255,255,255,.75); margin: 18px auto 32px; }
+.cta .hero-note { color: rgba(255,255,255,.5); }
+
+/* Footer ------------------------------------------------------------------ */
+footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,.08); padding: 28px 0; }
+footer .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; color: rgba(255,255,255,.55); }
+footer a { color: rgba(255,255,255,.8); }
+footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="shell">
+    <a class="brand" href="#"><img src="assets/plugin-icon.svg" alt="" />iFrame</a>
+    <nav>
+      <a href="#convert">URL conversion</a>
+      <a href="#responsive">Responsive</a>
+      <a href="#shortcode">Shortcode</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn--primary" href="https://wordpress.org/plugins/b-iframe/">Download free</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="shell">
+    <div>
+      <div class="eyebrow">WordPress plugin · Free</div>
+      <h1>Embed anything.<br />Fit everywhere.</h1>
+      <p class="lede">iFrame puts videos, maps, playlists, design files and whole websites inside your pages — in iframes that convert themselves from plain links and keep their shape on every screen.</p>
+      <div class="hero-ctas">
+        <a class="btn btn--primary" href="https://wordpress.org/plugins/b-iframe/">Download on WordPress.org</a>
+        <a class="btn btn--ghost" href="https://github.com/bPlugins/b-iframe">View on GitHub</a>
+      </div>
+      <p class="hero-note">Works with the block editor, shortcodes, Elementor and PHP templates.</p>
+    </div>
+    <div class="mock">
+      <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url"></span></div>
+      <div class="mock-body">
+        <div class="mock-embed">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="square"><path d="M9 6 L3 12 L9 18" /></svg>
+          <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="square"><path d="M15 6 L21 12 L15 18" /></svg>
+          <span class="mock-handle"></span>
+        </div>
+        <div class="mock-chips">
+          <span class="chip on">16:9</span><span class="chip">4:3</span><span class="chip">1:1</span><span class="chip">9:16</span><span class="chip">21:9</span><span class="chip">Custom</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="providers">
+  <div class="shell">
+    <b>Links that convert themselves</b>
+    <span>YouTube</span><span>Vimeo</span><span>Dailymotion</span><span>Google Maps</span><span>Spotify</span><span>Loom</span><span>Figma</span>
+  </div>
+</div>
+
+<section class="section" id="convert">
+  <div class="shell split">
+    <div>
+      <div class="eyebrow">Smart URL conversion</div>
+      <h2>Paste a link, get a working embed</h2>
+      <p>Nobody remembers embed URLs. Paste the page link you already have — the watch page, the share link, the map you're looking at — and iFrame rewrites it to the form that actually plays. YouTube even switches to the privacy-enhanced no-cookie player, with the right permissions and referrer policy set for you.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#146EF5" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>watch, share and shorts links all understood</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#146EF5" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>the editor warns when a site refuses to be embedded</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#146EF5" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>unknown links pass through untouched</li>
+      </ul>
+    </div>
+    <div class="convert">
+      <div class="convert-row">
+        <span class="convert-in">youtube.com/watch?v=_QT9Ko1yhvQ</span>
+        <span class="convert-arrow">→</span>
+        <span class="convert-out">youtube-nocookie.com/embed/_QT9Ko1yhvQ</span>
+      </div>
+      <div class="convert-row">
+        <span class="convert-in">google.com/maps/place/Dhaka</span>
+        <span class="convert-arrow">→</span>
+        <span class="convert-out">google.com/maps?q=Dhaka&amp;output=embed</span>
+      </div>
+      <div class="convert-row">
+        <span class="convert-in">open.spotify.com/track/4uLU6…</span>
+        <span class="convert-arrow">→</span>
+        <span class="convert-out">open.spotify.com/embed/track/4uLU6…</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="responsive">
+  <div class="shell split">
+    <div class="split-media"><img src="assets/screen-sizing.png" alt="The Sizing panel: Fixed height or Aspect ratio with presets" /></div>
+    <div>
+      <div class="eyebrow">Responsive sizing</div>
+      <h2>Pick a ratio, forget the math</h2>
+      <p>A fixed-height iframe that looks right on desktop overflows on a phone. Switch the block to <strong>Aspect ratio</strong> mode — 16:9, 4:3, 1:1, 9:16, 21:9 or your own — and the embed scales with the page, every time, with modern CSS and no padding hacks.</p>
+      <p>Need exact dimensions instead? Fixed width and height still work, along with borders, shadows and alignment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shortcode">
+  <div class="shell split">
+    <div>
+      <div class="eyebrow">ShortCode Generator</div>
+      <h2>Build once, embed everywhere</h2>
+      <p>Design an iframe with the full block editor, publish it, and it gets its own shortcode — <code>[b-iframe id="123"]</code> — shown right in the editor with one-click copy. Paste it into posts, widgets, Elementor or your theme. Edit the iframe in one place and every copy updates.</p>
+      <p>For quick one-offs, the classic shortcode works anywhere too: <code>[iframe src="https://…" ratio="16:9"]</code></p>
+    </div>
+    <div class="split-media"><img src="assets/screen-shortcode.png" alt="The editor shows the shortcode with a one-click Copy button" /></div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="shell center">
+    <div class="eyebrow">How it works</div>
+    <h2>Three steps, no code</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Add the block</h3><p>Search "iFrame" in the editor and paste any URL. Recognised links convert on the spot.</p></div>
+      <div class="step"><b>2</b><h3>Pick a size</h3><p>Choose an aspect ratio so it scales with the page, or set exact dimensions. Style with borders and shadows.</p></div>
+      <div class="step"><b>3</b><h3>Publish</h3><p>The iframe is rendered server-side — visible to search engines, no layout shift, and a fullscreen button for visitors.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="shell center">
+    <div class="eyebrow">Under the hood</div>
+    <h2>Built the way you would want it built</h2>
+    <div class="grid">
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg></span><h3>Server-side rendered</h3><p>Real HTML in the page: crawlers index it, no-JS visitors see it, nothing jumps while loading.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg></span><h3>Aspect-ratio presets</h3><p>16:9, 4:3, 1:1, 9:16, 21:9 or any custom ratio — in the block and the shortcode.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><h3>Tiny frontend</h3><p>The public script is a few KB of vanilla JavaScript — no framework shipped to your visitors.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><h3>Privacy-aware</h3><p>YouTube embeds use the no-cookie player, and nothing loads from third parties until it has to.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span><h3>Blocked-embed warning</h3><p>If a site's headers forbid framing, the editor tells you before your visitors meet an empty box.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg></span><h3>Fullscreen &amp; lazy loading</h3><p>An optional fullscreen button for visitors, and eager/lazy loading control per embed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="faq">
+  <div class="shell center">
+    <div class="eyebrow">Questions</div>
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>Is iFrame free?</summary>
+        <p>Yes — everything on this page is in the free plugin on WordPress.org. No locked features, no upsells.</p>
+      </details>
+      <details>
+        <summary>Why did my pasted link change?</summary>
+        <p>Links to known providers are rewritten to the URL those providers require for embedding — for example youtube.com/watch links become youtube-nocookie.com/embed links. Unrecognised links are left untouched.</p>
+      </details>
+      <details>
+        <summary>Why won't some sites embed?</summary>
+        <p>Sites can send an X-Frame-Options or Content-Security-Policy header that forbids being shown inside other pages, and browsers enforce it. iFrame detects this in the editor and warns you; use the site's own embed or share URL if it offers one.</p>
+      </details>
+      <details>
+        <summary>Does it work outside the block editor?</summary>
+        <p>Yes. Use <code>[iframe src="…" ratio="16:9"]</code> anywhere shortcodes work, drop a generated <code>[b-iframe id="123"]</code> into Elementor's Shortcode widget, or call <code>do_shortcode()</code> from a template.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--ink cta">
+  <div class="shell">
+    <h2>Add an embed to your next page</h2>
+    <p class="lede">Install iFrame from your Plugins screen, paste a link, and it just fits.</p>
+    <a class="btn btn--orange" href="https://wordpress.org/plugins/b-iframe/">Download free on WordPress.org</a>
+    <p class="hero-note">GPL-3.0 · by bPlugins</p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <span>© bPlugins — iFrame</span>
+    <span>
+      <a href="https://wordpress.org/support/plugin/b-iframe/">Support</a> ·
+      <a href="https://github.com/bPlugins/b-iframe">GitHub</a> ·
+      <a href="https://bplugins.com">bplugins.com</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!--
+    iFrame (b-iframe) — plugin icon.
+    A browser window holding a responsive 16:9 embed with markup chevrons
+    and an orange resize handle.
+    bPlugins brand: #146EF5 blue, #FF7A00 orange, #070127 navy.
+    Rest state (0% / 100%) is identical to the static PNG derivatives.
+  -->
+  <defs>
+    <style>
+      svg { --dur: 4.6s; }
+      .chev-l { animation: nudge-l var(--dur) ease-in-out infinite; }
+      .chev-r { animation: nudge-r var(--dur) ease-in-out infinite; }
+      .handle { transform-box: fill-box; transform-origin: 50% 50%; animation: pulse var(--dur) ease-in-out infinite; }
+      .embed { transform-box: fill-box; transform-origin: 50% 50%; animation: flex var(--dur) ease-in-out infinite; }
+      @keyframes nudge-l { 0%, 100% { transform: translateX(0); } 30% { transform: translateX(-6px); } 60% { transform: translateX(0); } }
+      @keyframes nudge-r { 0%, 100% { transform: translateX(0); } 30% { transform: translateX(6px); } 60% { transform: translateX(0); } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 30% { transform: scale(1.25); } 55% { transform: scale(1); } }
+      @keyframes flex { 0%, 100% { transform: scaleX(1); } 30% { transform: scaleX(1.06); } 60% { transform: scaleX(1); } }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#146EF5"/>
+      <stop offset="1" stop-color="#0B3FA8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" fill="url(#bg)"/>
+
+      <!-- browser chrome -->
+      <rect x="28" y="36" width="200" height="184" fill="#ffffff"/>
+      <rect x="28" y="36" width="200" height="34" fill="#070127"/>
+      <circle cx="46" cy="53" r="6" fill="#FF7A00"/>
+      <circle cx="66" cy="53" r="6" fill="#ffffff" fill-opacity="0.55"/>
+      <circle cx="86" cy="53" r="6" fill="#ffffff" fill-opacity="0.3"/>
+      <rect x="104" y="45" width="112" height="16" fill="#ffffff" fill-opacity="0.18"/>
+
+      <!-- embedded frame, 16:9, kept centred -->
+      <g class="embed">
+        <rect x="52" y="88" width="152" height="86" fill="#146EF5"/>
+        <path class="chev-l" d="M96 114 L80 131 L96 148" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="square"/>
+        <path class="chev-r" d="M160 114 L176 131 L160 148" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="square"/>
+        <rect x="122" y="126" width="12" height="12" fill="#ffffff" transform="rotate(20 128 132)"/>
+      </g>
+
+      <!-- resize handle: the responsive corner -->
+      <rect class="handle" x="192" y="162" width="24" height="24" fill="#FF7A00"/>
+
+      <!-- content lines under the embed -->
+      <rect x="52" y="192" width="152" height="10" fill="#070127" fill-opacity="0.18"/>
+      <rect x="52" y="207" width="96" height="10" fill="#070127" fill-opacity="0.1"/>
+</svg>
