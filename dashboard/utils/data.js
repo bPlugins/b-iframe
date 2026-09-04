@@ -21,7 +21,7 @@ export const dashboardInfo = (info) => {
 			logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
 			banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
 			thumbnail: `${pluginUrl}assets/welcome-banner.svg`,
-			video: 'https://youtu.be/Hfm94aHAbYQ',
+			video: 'https://www.youtube.com/watch?v=_QT9Ko1yhvQ',
 			isYoutube: true,
 		},
 		pages: {
