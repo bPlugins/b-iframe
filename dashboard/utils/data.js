@@ -41,9 +41,6 @@ export const dashboardInfo = (info) => {
 }
 
 export const welcomeInfo = (adminUrl = '') => ({
-	keywords: ['Aspect ratio', 'URL conversion', 'ShortCode Generator'],
-	keywordsLabel: 'Highlights',
-
 	gettingStarted: {
 		tabs: [
 			{
