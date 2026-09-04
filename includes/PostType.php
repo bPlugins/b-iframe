@@ -113,6 +113,10 @@ if ( !class_exists( __NAMESPACE__ . '\PostType' ) ) {
 			if ( isset( $screen->post_type ) && self::POST_TYPE === $screen->post_type ) {
 				wp_enqueue_style( 'bifrm-admin-shortcode', BIFRM_DIR_URL . 'assets/admin-shortcode.css', [], BIFRM_VERSION );
 				wp_enqueue_script( 'bifrm-admin-shortcode', BIFRM_DIR_URL . 'assets/admin-shortcode.js', [], BIFRM_VERSION, true );
+
+				if ( 'post' === $screen->base ) {
+					wp_enqueue_script( 'bifrm-editor-shortcode', BIFRM_DIR_URL . 'assets/editor-shortcode.js', [ 'wp-data', 'wp-dom-ready' ], BIFRM_VERSION, true );
+				}
 			}
 
 			if ( isset( $screen->base ) && self::POST_TYPE . '_page_bifrm_demo_page' === $screen->base ) {
