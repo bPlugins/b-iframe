@@ -11,7 +11,7 @@
 <style>
 /* ==========================================================================
    iFrame — product landing page.
-   Same design language as the other bPlugins landing pages:
+   Section set mirrors media-fields.bplugins.com; same design language:
    Space Grotesk headings, Inter body, #146EF5 primary, #FF7A00 accent,
    #070127 ink, soft blue tints for section bands.
    ========================================================================== */
@@ -67,14 +67,14 @@ code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; bac
 
 /* Header ------------------------------------------------------------------ */
 .top { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-.top .shell { display: flex; align-items: center; gap: 28px; height: 68px; }
+.top .shell { display: flex; align-items: center; gap: 24px; height: 68px; }
 .brand { display: flex; align-items: center; gap: 11px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 19px; color: var(--ink); }
 .brand img { width: 34px; height: 34px; border-radius: 7px; }
-.top nav { display: flex; gap: 26px; margin-left: auto; }
-.top nav a { color: var(--body); font-size: 14.5px; font-weight: 500; }
+.top nav { display: flex; gap: 22px; margin-left: auto; }
+.top nav a { color: var(--body); font-size: 14px; font-weight: 500; white-space: nowrap; }
 .top nav a:hover { color: var(--blue); }
 .top .btn { padding: 9px 20px; font-size: 14px; }
-@media (max-width: 760px) { .top nav { display: none; } }
+@media (max-width: 980px) { .top nav { display: none; } }
 
 /* Hero -------------------------------------------------------------------- */
 .hero { padding: 92px 0 70px; background:
@@ -100,17 +100,29 @@ code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; bac
 .chip { padding: 7px 15px; border-radius: 99px; border: 1.5px solid var(--line); font-size: 13px; font-weight: 600; color: var(--body); }
 .chip.on { background: var(--blue); border-color: var(--blue); color: #fff; }
 
+/* Stats bar ---------------------------------------------------------------- */
+.stats { background: var(--ink); padding: 30px 0; }
+.stats .shell { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 760px) { .stats .shell { grid-template-columns: 1fr 1fr; } }
+.stat { text-align: center; }
+.stat b { display: block; font-family: "Space Grotesk", sans-serif; font-size: 30px; color: #fff; line-height: 1.2; }
+.stat span { font-size: 13px; color: rgba(255,255,255,.6); }
+
 /* Provider row ------------------------------------------------------------ */
-.providers { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; }
+.providers { border-bottom: 1px solid var(--line); padding: 26px 0; }
 .providers .shell { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 34px; }
 .providers span { font-size: 14px; font-weight: 600; color: var(--muted); letter-spacing: .2px; }
 .providers b { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink); margin-right: 8px; }
 
+/* Problem ------------------------------------------------------------------ */
+.problem .shell { max-width: 860px; text-align: center; }
+.problem .lede { margin: 0 auto; }
+.problem p + p { margin-top: 14px; }
+
 /* Feature split rows ------------------------------------------------------ */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .split + .split { margin-top: 90px; }
-.split:nth-child(even) .split-media { order: -1; }
-@media (max-width: 880px) { .split { grid-template-columns: 1fr; gap: 30px; } .split:nth-child(even) .split-media { order: 0; } }
+@media (max-width: 880px) { .split { grid-template-columns: 1fr; gap: 30px; } }
 .split h2 { margin-bottom: 16px; }
 .split p { margin-bottom: 12px; }
 .split-media { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 18px 44px rgba(7,1,39,.10); background: #fff; }
@@ -129,23 +141,64 @@ code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; bac
 @media (max-width: 560px) { .convert-row { flex-direction: column; align-items: stretch; } .convert-arrow { transform: rotate(90deg); align-self: center; } }
 
 /* Steps ------------------------------------------------------------------- */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 50px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin: 50px 0 0; }
 @media (max-width: 880px) { .steps { grid-template-columns: 1fr; } }
-.step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 28px; }
+.step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 28px; text-align: left; }
 .step b { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 8px; background: var(--blue); color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 16px; margin-bottom: 16px; }
 .step h3 { margin-bottom: 8px; }
 .step p { font-size: 15px; }
+.how-splits { margin-top: 90px; text-align: left; }
+
+/* Tutorial video ----------------------------------------------------------- */
+.video-wrap { max-width: 880px; margin: 46px auto 0; }
+.video-facade { position: relative; display: block; width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 14px; overflow: hidden; cursor: pointer; padding: 0; background: #070127; box-shadow: 0 26px 60px rgba(7,1,39,.22); }
+.video-facade img { width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+.video-facade .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 84px; height: 58px; border-radius: 14px; background: rgba(7,1,39,.78); display: flex; align-items: center; justify-content: center; transition: background .15s, transform .15s; }
+.video-facade:hover .play { background: var(--orange); transform: translate(-50%,-50%) scale(1.06); }
+.video-facade .play::after { content: ""; border-style: solid; border-width: 11px 0 11px 19px; border-color: transparent transparent transparent #fff; margin-left: 4px; }
+.video-facade .len { position: absolute; right: 12px; bottom: 12px; padding: 4px 10px; border-radius: 6px; background: rgba(7,1,39,.8); color: #fff; font-size: 12px; font-weight: 600; }
+.video-wrap iframe { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 14px; box-shadow: 0 26px 60px rgba(7,1,39,.22); }
 
 /* Features grid ----------------------------------------------------------- */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 50px; }
 @media (max-width: 880px) { .grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
-.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px; transition: box-shadow .2s, transform .2s; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px; text-align: left; transition: box-shadow .2s, transform .2s; }
 .card:hover { box-shadow: 0 16px 38px rgba(7,1,39,.09); transform: translateY(-2px); }
 .card .ico { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; background: rgba(20,110,245,.10); margin-bottom: 16px; }
 .card .ico svg { width: 22px; height: 22px; stroke: var(--blue); }
 .card h3 { margin-bottom: 8px; }
 .card p { font-size: 15px; }
+
+/* Live demos --------------------------------------------------------------- */
+.demos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 50px; }
+@media (max-width: 880px) { .demos { grid-template-columns: 1fr; } }
+.demo { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; text-align: left; }
+.demo iframe { width: 100%; aspect-ratio: 16/9; border: 0; display: block; background: #f4f7fd; }
+.demo .video-facade { aspect-ratio: 16/9; width: 100%; }
+.demo .video-facade .play { width: 62px; height: 44px; }
+.demo .demo-body { padding: 18px 20px 20px; }
+.demo h3 { margin-bottom: 6px; }
+.demo p { font-size: 14px; margin-bottom: 10px; }
+.demo code { font-size: 11.5px; }
+
+/* Screenshots gallery ------------------------------------------------------ */
+.shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 50px; }
+@media (max-width: 980px) { .shots { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .shots { grid-template-columns: 1fr; } }
+.shot { display: block; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+.shot:hover { box-shadow: 0 16px 38px rgba(7,1,39,.12); transform: translateY(-2px); }
+.shot img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top left; border-bottom: 1px solid var(--line); }
+.shot span { display: block; padding: 12px 16px; font-size: 13.5px; font-weight: 600; color: var(--ink); text-align: left; }
+
+/* Testimonials ------------------------------------------------------------- */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 50px; }
+@media (max-width: 880px) { .quotes { grid-template-columns: 1fr; } }
+.quote { background: #fff; border: 1px dashed var(--line); border-radius: 12px; padding: 28px; text-align: left; }
+.quote .starrow { color: var(--orange); letter-spacing: 3px; font-size: 15px; margin-bottom: 12px; }
+.quote p { font-size: 15px; font-style: italic; color: var(--muted); }
+.quote span { display: block; margin-top: 14px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.quotes-cta { margin-top: 34px; }
 
 /* FAQ --------------------------------------------------------------------- */
 .faq { max-width: 780px; margin: 46px auto 0; text-align: left; }
@@ -160,6 +213,9 @@ code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.9em; bac
 .cta { text-align: center; }
 .cta h2 { color: #fff; }
 .cta .lede { color: rgba(255,255,255,.75); margin: 18px auto 32px; }
+.cta .hero-ctas { justify-content: center; }
+.cta .btn--ghost { background: transparent; border-color: rgba(255,255,255,.3); color: #fff; }
+.cta .btn--ghost:hover { border-color: #fff; }
 .cta .hero-note { color: rgba(255,255,255,.5); }
 
 /* Footer ------------------------------------------------------------------ */
@@ -175,13 +231,16 @@ footer a:hover { color: #fff; }
   <div class="shell">
     <a class="brand" href="#"><img src="assets/plugin-icon.svg" alt="" />iFrame</a>
     <nav>
-      <a href="#convert">URL conversion</a>
+      <a href="#convert">Conversion</a>
       <a href="#responsive">Responsive</a>
-      <a href="#shortcode">Shortcode</a>
+      <a href="#how">How it works</a>
+      <a href="#tutorial">Tutorial</a>
       <a href="#features">Features</a>
+      <a href="#demos">Demos</a>
+      <a href="#shots">Screenshots</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn--primary" href="https://wordpress.org/plugins/b-iframe/">Download free</a>
+    <a class="btn btn--primary" href="https://wordpress.org/plugins/b-iframe/">Get it free</a>
   </div>
 </header>
 
@@ -193,7 +252,7 @@ footer a:hover { color: #fff; }
       <p class="lede">iFrame puts videos, maps, playlists, design files and whole websites inside your pages — in iframes that convert themselves from plain links and keep their shape on every screen.</p>
       <div class="hero-ctas">
         <a class="btn btn--primary" href="https://wordpress.org/plugins/b-iframe/">Download on WordPress.org</a>
-        <a class="btn btn--ghost" href="https://github.com/bPlugins/b-iframe">View on GitHub</a>
+        <a class="btn btn--ghost" href="#demos">See live demos</a>
       </div>
       <p class="hero-note">Works with the block editor, shortcodes, Elementor and PHP templates.</p>
     </div>
@@ -214,6 +273,15 @@ footer a:hover { color: #fff; }
   </div>
 </section>
 
+<div class="stats">
+  <div class="shell">
+    <div class="stat"><b>7</b><span>Providers auto-convert</span></div>
+    <div class="stat"><b>Free</b><span>On WordPress.org</span></div>
+    <div class="stat"><b>0</b><span>Lines of code needed</span></div>
+    <div class="stat"><b>5+</b><span>Aspect-ratio presets</span></div>
+  </div>
+</div>
+
 <div class="providers">
   <div class="shell">
     <b>Links that convert themselves</b>
@@ -221,7 +289,16 @@ footer a:hover { color: #fff; }
   </div>
 </div>
 
-<section class="section" id="convert">
+<section class="section problem" id="why">
+  <div class="shell">
+    <div class="eyebrow">The embed is where attention goes</div>
+    <h2>Broken embeds cost you readers</h2>
+    <p class="lede" style="margin-top:16px;">A raw iframe that looks fine on your desktop overflows on a phone. A pasted watch link renders a blank grey box. A slow third-party player shoves your layout around while it loads. Visitors don't file bug reports — they leave.</p>
+    <p class="lede">iFrame exists so none of that reaches your visitors: links convert to their working form, ratios hold on every screen, and the frame is real server-rendered HTML that never jumps.</p>
+  </div>
+</section>
+
+<section class="section section--tint" id="convert">
   <div class="shell split">
     <div>
       <div class="eyebrow">Smart URL conversion</div>
@@ -253,7 +330,7 @@ footer a:hover { color: #fff; }
   </div>
 </section>
 
-<section class="section section--tint" id="responsive">
+<section class="section" id="responsive">
   <div class="shell split">
     <div class="split-media"><img src="assets/screen-sizing.png" alt="The Sizing panel: Fixed height or Aspect ratio with presets" /></div>
     <div>
@@ -265,7 +342,7 @@ footer a:hover { color: #fff; }
   </div>
 </section>
 
-<section class="section" id="shortcode">
+<section class="section section--tint" id="shortcode">
   <div class="shell split">
     <div>
       <div class="eyebrow">ShortCode Generator</div>
@@ -277,7 +354,7 @@ footer a:hover { color: #fff; }
   </div>
 </section>
 
-<section class="section section--tint">
+<section class="section" id="how">
   <div class="shell center">
     <div class="eyebrow">How it works</div>
     <h2>Three steps, no code</h2>
@@ -286,6 +363,38 @@ footer a:hover { color: #fff; }
       <div class="step"><b>2</b><h3>Pick a size</h3><p>Choose an aspect ratio so it scales with the page, or set exact dimensions. Style with borders and shadows.</p></div>
       <div class="step"><b>3</b><h3>Publish</h3><p>The iframe is rendered server-side — visible to search engines, no layout shift, and a fullscreen button for visitors.</p></div>
     </div>
+
+    <div class="how-splits">
+      <div class="split">
+        <div class="split-media"><img src="assets/screen-generator.png" alt="The ShortCode Generator list with copyable shortcodes" /></div>
+        <div>
+          <h2 style="font-size:clamp(24px,2.6vw,32px);">A generator for reusable iframes</h2>
+          <p>Every iframe you build in the <strong>ShortCode Generator</strong> is listed with its shortcode and a copy-to-clipboard button — hand them to editors who never touch the block editor.</p>
+        </div>
+      </div>
+      <div class="split">
+        <div>
+          <h2 style="font-size:clamp(24px,2.6vw,32px);">One dashboard for everything</h2>
+          <p>Welcome tour, getting-started guides for Gutenberg, shortcode, Elementor and PHP, live demos, and a settings page that controls exactly what happens to your data on uninstall.</p>
+        </div>
+        <div class="split-media"><img src="assets/screen-welcome.png" alt="The iFrame dashboard welcome page" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint center" id="tutorial">
+  <div class="shell">
+    <div class="eyebrow">Watch the step-by-step tutorial</div>
+    <h2>See it working in two minutes</h2>
+    <div class="video-wrap" id="tutorialVideo">
+      <button type="button" class="video-facade" onclick="var w=document.getElementById('tutorialVideo');w.innerHTML='&lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/_QT9Ko1yhvQ?autoplay=1&amp;rel=0&quot; title=&quot;iFrame tutorial&quot; allow=&quot;autoplay; encrypted-media; picture-in-picture&quot; allowfullscreen referrerpolicy=&quot;strict-origin-when-cross-origin&quot;&gt;&lt;/iframe&gt;';">
+        <img src="https://i.ytimg.com/vi/_QT9Ko1yhvQ/maxresdefault.jpg" alt="Play the iFrame tutorial" loading="lazy" />
+        <span class="play" aria-hidden="true"></span>
+        <span class="len">Tutorial</span>
+      </button>
+    </div>
+    <p class="hero-note">Nothing loads from YouTube until you press play.</p>
   </div>
 </section>
 
@@ -304,7 +413,64 @@ footer a:hover { color: #fff; }
   </div>
 </section>
 
-<section class="section section--tint" id="faq">
+<section class="section section--tint" id="demos">
+  <div class="shell center">
+    <div class="eyebrow">Live demos</div>
+    <h2>These are real iframes, right here</h2>
+    <p class="lede" style="margin:16px auto 0;">Each one was made from a plain pasted link — the same way it works in your editor.</p>
+    <div class="demos">
+      <div class="demo">
+        <div class="demo-frame" id="ytDemo">
+          <button type="button" class="video-facade" style="border-radius:0;box-shadow:none;" onclick="var w=document.getElementById('ytDemo');w.innerHTML='&lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/_QT9Ko1yhvQ?autoplay=1&amp;rel=0&quot; title=&quot;YouTube demo&quot; style=&quot;width:100%;aspect-ratio:16/9;border:0;display:block;&quot; allow=&quot;autoplay; encrypted-media; picture-in-picture&quot; allowfullscreen referrerpolicy=&quot;strict-origin-when-cross-origin&quot;&gt;&lt;/iframe&gt;';">
+          <img src="https://i.ytimg.com/vi/_QT9Ko1yhvQ/hqdefault.jpg" alt="Play the YouTube demo" loading="lazy" />
+          <span class="play" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="demo-body"><h3>YouTube video</h3><p>Pasted as a watch link; converted to the no-cookie player.</p><code>[iframe src="youtube.com/watch?v=…" ratio="16:9"]</code></div>
+      </div>
+      <div class="demo">
+        <iframe src="https://www.google.com/maps?q=Dhaka&amp;output=embed" title="Google Maps demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="demo-body"><h3>Google Map</h3><p>Pasted as a place link; converted to an embeddable map.</p><code>[iframe src="google.com/maps/place/Dhaka" ratio="16:9"]</code></div>
+      </div>
+      <div class="demo">
+        <iframe src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC" title="Spotify demo" loading="lazy" allow="encrypted-media"></iframe>
+        <div class="demo-body"><h3>Spotify track</h3><p>Pasted as an open.spotify.com link; converted to the embed player.</p><code>[iframe src="open.spotify.com/track/…" ratio="16:9"]</code></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shots">
+  <div class="shell center">
+    <div class="eyebrow">Screenshots</div>
+    <h2>A look around the plugin</h2>
+    <div class="shots">
+      <a class="shot" href="assets/screen-editor.png" target="_blank" rel="noopener"><img src="assets/screen-editor.png" alt="" loading="lazy" /><span>The iFrame block in the editor</span></a>
+      <a class="shot" href="assets/screen-sizing.png" target="_blank" rel="noopener"><img src="assets/screen-sizing.png" alt="" loading="lazy" /><span>Aspect-ratio sizing panel</span></a>
+      <a class="shot" href="assets/screen-shortcode.png" target="_blank" rel="noopener"><img src="assets/screen-shortcode.png" alt="" loading="lazy" /><span>One-click shortcode copy</span></a>
+      <a class="shot" href="assets/screen-generator.png" target="_blank" rel="noopener"><img src="assets/screen-generator.png" alt="" loading="lazy" /><span>ShortCode Generator list</span></a>
+      <a class="shot" href="assets/screen-welcome.png" target="_blank" rel="noopener"><img src="assets/screen-welcome.png" alt="" loading="lazy" /><span>Dashboard welcome</span></a>
+      <a class="shot" href="assets/screen-demos.png" target="_blank" rel="noopener"><img src="assets/screen-demos.png" alt="" loading="lazy" /><span>Built-in live demos</span></a>
+      <a class="shot" href="assets/screen-settings.png" target="_blank" rel="noopener"><img src="assets/screen-settings.png" alt="" loading="lazy" /><span>Data-control settings</span></a>
+      <a class="shot" href="assets/screen-frontend.png" target="_blank" rel="noopener"><img src="assets/screen-frontend.png" alt="" loading="lazy" /><span>Embeds on the frontend</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="reviews">
+  <div class="shell center">
+    <div class="eyebrow">What people are saying</div>
+    <h2>Your review goes here</h2>
+    <div class="quotes">
+      <div class="quote"><div class="starrow">★★★★★</div><p>Used iFrame on a site? Tell other builders what worked for you — reviews are what keep free plugins alive.</p><span>— You, hopefully</span></div>
+      <div class="quote"><div class="starrow">★★★★★</div><p>Found a bug or missing feature instead? The support forum reaches the developers directly.</p><span>— Also welcome</span></div>
+      <div class="quote"><div class="starrow">★★★★★</div><p>Every rating on WordPress.org helps other people find the plugin.</p><span>— Thank you</span></div>
+    </div>
+    <div class="quotes-cta"><a class="btn btn--primary" href="https://wordpress.org/support/plugin/b-iframe/reviews/#new-post">Leave a review</a></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
   <div class="shell center">
     <div class="eyebrow">Questions</div>
     <h2>Frequently asked questions</h2>
@@ -325,16 +491,36 @@ footer a:hover { color: #fff; }
         <summary>Does it work outside the block editor?</summary>
         <p>Yes. Use <code>[iframe src="…" ratio="16:9"]</code> anywhere shortcodes work, drop a generated <code>[b-iframe id="123"]</code> into Elementor's Shortcode widget, or call <code>do_shortcode()</code> from a template.</p>
       </details>
+      <details>
+        <summary>Will it slow my site down?</summary>
+        <p>No. The iframe is rendered server-side as plain HTML, the frontend script is a few KB of vanilla JavaScript, and you can set embeds to lazy-load so they only fetch when scrolled into view.</p>
+      </details>
+      <details>
+        <summary>What happens on phones and tablets?</summary>
+        <p>In aspect-ratio mode the embed scales with the page width and keeps its proportions on any screen. Fixed-size embeds are capped at 100% width so they never overflow the layout.</p>
+      </details>
+      <details>
+        <summary>Can I reuse the same iframe on many pages?</summary>
+        <p>Yes — build it once in the ShortCode Generator and paste its <code>[b-iframe id="123"]</code> shortcode wherever you need it. Edit the iframe in one place and every copy updates.</p>
+      </details>
+      <details>
+        <summary>Does it collect any data?</summary>
+        <p>Nothing without consent. YouTube embeds default to the privacy-enhanced no-cookie player, and the optional Freemius usage tracking only activates if you explicitly opt in — Skip keeps the plugin fully functional.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <section class="section section--ink cta">
   <div class="shell">
-    <h2>Add an embed to your next page</h2>
-    <p class="lede">Install iFrame from your Plugins screen, paste a link, and it just fits.</p>
-    <a class="btn btn--orange" href="https://wordpress.org/plugins/b-iframe/">Download free on WordPress.org</a>
-    <p class="hero-note">GPL-3.0 · by bPlugins</p>
+    <div class="eyebrow" style="color:rgba(255,255,255,.55);">Add it to your next page</div>
+    <h2>Paste a link. It just fits.</h2>
+    <p class="lede">Install iFrame from your Plugins screen and your next embed takes thirty seconds.</p>
+    <div class="hero-ctas">
+      <a class="btn btn--orange" href="https://wordpress.org/plugins/b-iframe/">Download free on WordPress.org</a>
+      <a class="btn btn--ghost" href="https://github.com/bPlugins/b-iframe">View source on GitHub</a>
+    </div>
+    <p class="hero-note">GPL-3.0 · by bPlugins · more providers and features on the roadmap</p>
   </div>
 </section>
 
@@ -342,6 +528,7 @@ footer a:hover { color: #fff; }
   <div class="shell">
     <span>© bPlugins — iFrame</span>
     <span>
+      <a href="https://wordpress.org/plugins/b-iframe/">WordPress.org</a> ·
       <a href="https://wordpress.org/support/plugin/b-iframe/">Support</a> ·
       <a href="https://github.com/bPlugins/b-iframe">GitHub</a> ·
       <a href="https://bplugins.com">bplugins.com</a>
