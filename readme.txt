@@ -13,6 +13,8 @@ Embed videos, maps, sites & docs in responsive iframes. YouTube, Vimeo, Maps lin
 
 == Description ==
 
+**[Live Demo](https://iframe.bplugins.com/ "iFrame live demo page")** | **[Support](https://wordpress.org/support/plugin/b-iframe/ "Get help")**
+
 iFrame puts any web content inside your pages — videos, maps, playlists, design files, documents or whole websites — in an iframe that actually behaves.
 
 **Paste a link, get a working embed.** Normal page links from YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom and Figma are rewritten to their embeddable form automatically; YouTube even switches to the privacy-enhanced no-cookie player. No hunting for "embed URLs".
