@@ -1,3 +1,4 @@
 node_modules
 .env
-*.zipwp.org/svn/
+*.zip
+wp.org/svn/
