@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: B Iframe
+ * Plugin Name: iFrame
  * Description: Responsive iframe embedding for videos, live website, and more..
  * Version: 1.1.0
  * Author: bPlugins

@@ -1,4 +1,4 @@
 /* b-iframe dashboard tweaks over bpl-tools/Admin. */
 
 /* Free-only plugin: no plan system, so no plan badge. */
-.bPlDashboard .planBadge { display: none; }
+.bPlDashboard .bPlDashboardWelcomeOverview .planBadge { display: none; }

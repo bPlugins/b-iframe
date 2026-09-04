@@ -6,10 +6,10 @@ export const dashboardInfo = (info) => {
 	const { version, adminUrl, deleteDataOnUninstall, uninstallNonce } = info;
 
 	return {
-		name: 'B Iframe',
-		displayName: 'B Iframe - Responsive Iframe Embedding for WordPress',
+		name: 'iFrame',
+		displayName: 'iFrame - Responsive Iframe Embedding for WordPress',
 		description:
-			'B Iframe embeds any URL — a website, video, map, playlist or design file — in a responsive iframe. Paste a normal page link and it is converted to the embeddable form automatically, keep any aspect ratio at any screen size, and reuse the same iframe anywhere with a generated shortcode. Server-side rendered, so embeds are visible to search engines and load without layout shift.',
+			'iFrame embeds any URL — a website, video, map, playlist or design file — in a responsive iframe. Paste a normal page link and it is converted to the embeddable form automatically, keep any aspect ratio at any screen size, and reuse the same iframe anywhere with a generated shortcode. Server-side rendered, so embeds are visible to search engines and load without layout shift.',
 		slug,
 		version,
 
@@ -79,7 +79,7 @@ export const welcomeInfo = (adminUrl = '') => ({
 					{
 						num: 1,
 						title: 'Create a Reusable Iframe',
-						body: 'Go to <strong>B Iframe</strong> in your admin menu and click <strong>Add New ShortCode</strong>.',
+						body: 'Go to <strong>iFrame</strong> in your admin menu and click <strong>Add New ShortCode</strong>.',
 						link: { url: `${adminUrl}post-new.php?post_type=b-iframe`, label: 'Add New' },
 					},
 					{
@@ -90,7 +90,7 @@ export const welcomeInfo = (adminUrl = '') => ({
 					{
 						num: 3,
 						title: 'Copy the Shortcode',
-						body: 'Go to <strong>B Iframe -> ShortCode Generator</strong> and copy the shortcode (e.g. <code>[b-iframe id="123"]</code>).',
+						body: 'Go to <strong>iFrame -> ShortCode Generator</strong> and copy the shortcode (e.g. <code>[b-iframe id="123"]</code>).',
 						link: { url: `${adminUrl}edit.php?post_type=b-iframe`, label: 'ShortCode Generator' },
 					},
 					{
@@ -107,7 +107,7 @@ export const welcomeInfo = (adminUrl = '') => ({
 					{
 						num: 1,
 						title: 'Create a Reusable Iframe',
-						body: 'Go to <strong>B Iframe -> Add New ShortCode</strong> to build and publish, then copy its shortcode.',
+						body: 'Go to <strong>iFrame -> Add New ShortCode</strong> to build and publish, then copy its shortcode.',
 						link: { url: `${adminUrl}post-new.php?post_type=b-iframe`, label: 'Add New' },
 					},
 					{
@@ -134,7 +134,7 @@ export const welcomeInfo = (adminUrl = '') => ({
 					{
 						num: 1,
 						title: 'Get the ID',
-						body: 'Go to <strong>B Iframe -> ShortCode Generator</strong> and note the <strong>ID</strong> you want to embed.',
+						body: 'Go to <strong>iFrame -> ShortCode Generator</strong> and note the <strong>ID</strong> you want to embed.',
 						link: { url: `${adminUrl}edit.php?post_type=b-iframe`, label: 'ShortCode Generator' },
 					},
 					{
@@ -183,7 +183,7 @@ export const welcomeInfo = (adminUrl = '') => ({
 });
 
 export const demoInfo = {
-	allInOneLabel: 'More about B Iframe',
+	allInOneLabel: 'More about iFrame',
 	allInOneLink: `https://bplugins.com/products/${slug}/`,
 	demos: [
 		{

@@ -2,25 +2,25 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: B Iframe 1.1.0\n"
+"Project-Id-Version: iFrame 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/b-iframe\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-04T07:57:12+00:00\n"
+"POT-Creation-Date: 2026-09-04T13:49:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: b-iframe\n"
 
 #. Plugin Name of the plugin
 #: b-iframe.php
-#: includes/PostType.php:31
-#: includes/PostType.php:33
+#: includes/PostType.php:32
 #: includes/PostType.php:34
 #: includes/PostType.php:35
-msgid "B Iframe"
+#: includes/PostType.php:36
+msgid "iFrame"
 msgstr ""
 
 #. Description of the plugin
@@ -38,163 +38,65 @@ msgstr ""
 msgid "https://bplugins.com"
 msgstr ""
 
-#: includes/PostType.php:36
+#: includes/PostType.php:37
 msgid "ShortCode Generator"
 msgstr ""
 
-#: includes/PostType.php:37
 #: includes/PostType.php:38
-#: includes/PostType.php:157
+#: includes/PostType.php:39
 msgid "Add New ShortCode"
 msgstr ""
 
-#: includes/PostType.php:39
+#: includes/PostType.php:40
 msgid "Edit Iframe"
 msgstr ""
 
-#: includes/PostType.php:40
+#: includes/PostType.php:41
 msgid "No iframes yet — add one."
 msgstr ""
 
-#: includes/PostType.php:41
+#: includes/PostType.php:42
 msgid "Published"
 msgstr ""
 
-#: includes/PostType.php:42
+#: includes/PostType.php:43
 msgid "Updated"
 msgstr ""
 
-#: includes/PostType.php:55
+#: includes/PostType.php:56
 msgid "ShortCode"
 msgstr ""
 
-#: includes/PostType.php:56
+#: includes/PostType.php:57
 msgid "Date"
 msgstr ""
 
-#: includes/PostType.php:64
+#: includes/PostType.php:65
 msgid "Copy To Clipboard"
 msgstr ""
 
-#: includes/PostType.php:102
+#: includes/PostType.php:103
 msgid "Demo Page"
 msgstr ""
 
-#: includes/PostType.php:103
+#: includes/PostType.php:104
 msgid "Help & Demos"
 msgstr ""
 
-#: includes/PostType.php:122
-msgid "B Iframe — Help & Demos"
-msgstr ""
-
-#: includes/PostType.php:123
-msgid "Three ways to embed anything: the iFrame block in the editor, the [iframe] shortcode anywhere shortcodes work, and reusable iframes via the ShortCode Generator."
-msgstr ""
-
-#: includes/PostType.php:128
-msgid "Live demo"
-msgstr ""
-
-#: includes/PostType.php:129
-msgid "This is the [iframe] shortcode rendering a YouTube page link — the URL is converted to the privacy-enhanced player automatically and keeps a 16:9 ratio at any width."
-msgstr ""
-
 #: includes/PostType.php:135
-msgid "The [iframe] shortcode"
+msgid "Invalid security token."
 msgstr ""
 
-#: includes/PostType.php:137
-msgid "Attribute"
+#: includes/PostType.php:138
+msgid "You do not have permission to perform this action."
 msgstr ""
 
-#: includes/PostType.php:137
-msgid "Default"
+#: includes/PostType.php:149
+msgid "Data deletion enabled."
 msgstr ""
 
-#: includes/PostType.php:137
-msgid "What it does"
-msgstr ""
-
-#: includes/PostType.php:139
-msgid "Any URL. Page links from YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom and Figma are converted to their embeddable form."
-msgstr ""
-
-#: includes/PostType.php:140
-#: includes/PostType.php:142
-msgid "(empty)"
-msgstr ""
-
-#: includes/PostType.php:140
-msgid "Keep an aspect ratio, e.g. 16:9, 4:3, 1:1 — overrides height."
-msgstr ""
-
-#: includes/PostType.php:141
-msgid "Fixed size when no ratio is set."
-msgstr ""
-
-#: includes/PostType.php:142
-msgid "Accessible title for the iframe."
-msgstr ""
-
-#: includes/PostType.php:143
-msgid "auto, lazy or eager."
-msgstr ""
-
-#: includes/PostType.php:144
-msgid "Allow fullscreen inside the frame."
-msgstr ""
-
-#: includes/PostType.php:145
-msgid "Simple border styling."
-msgstr ""
-
-#: includes/PostType.php:151
-msgid "Reusable iframes: [b-iframe id=\"…\"]"
-msgstr ""
-
-#: includes/PostType.php:153
-msgid "Go to B Iframe → ShortCode Generator → Add New ShortCode."
-msgstr ""
-
-#: includes/PostType.php:154
-msgid "Configure the iframe with the full block editor (ratio, conversion, borders, shadows) and publish."
-msgstr ""
-
-#: includes/PostType.php:155
-msgid "Copy its shortcode from the list — for example"
-msgstr ""
-
-#: includes/PostType.php:155
-msgid "and paste it into any post, widget or page builder. Edit the iframe once, and it updates everywhere."
-msgstr ""
-
-#: includes/PostType.php:163
-msgid "The iFrame block"
-msgstr ""
-
-#: includes/PostType.php:164
-msgid "In the editor, add the \"iFrame\" block, paste a URL, then pick a sizing mode: Aspect ratio scales with the page, Fixed height stays put. The editor warns you when a site refuses to be embedded."
-msgstr ""
-
-#: includes/PostType.php:167
-msgid "Supported conversions"
-msgstr ""
-
-#: includes/PostType.php:169
-msgid "privacy-enhanced player"
-msgstr ""
-
-#: includes/PostType.php:174
-msgid "Need help?"
-msgstr ""
-
-#: includes/PostType.php:175
-msgid "Support forum"
-msgstr ""
-
-#: includes/PostType.php:175
-msgid "Email support"
+#: includes/PostType.php:150
+msgid "Data will be preserved on uninstall."
 msgstr ""
 
 #: src/Components/Backend/Edit.js:24

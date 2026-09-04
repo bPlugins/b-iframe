@@ -29,11 +29,11 @@ if ( !class_exists( __NAMESPACE__ . '\PostType' ) ) {
 			$menuIcon = "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#fff' stroke-width='2'><rect x='2' y='3' width='20' height='18' rx='1'/><path d='M2 8h20'/><path d='M8 13l-2.5 2.5L8 18'/><path d='M16 13l2.5 2.5L16 18'/></svg>";
 
 			register_post_type( self::POST_TYPE, [
-				'label'         => __( 'B Iframe', 'b-iframe' ),
+				'label'         => __( 'iFrame', 'b-iframe' ),
 				'labels'        => [
-					'name'           => __( 'B Iframe', 'b-iframe' ),
-					'singular_name'  => __( 'B Iframe', 'b-iframe' ),
-					'menu_name'      => __( 'B Iframe', 'b-iframe' ),
+					'name'           => __( 'iFrame', 'b-iframe' ),
+					'singular_name'  => __( 'iFrame', 'b-iframe' ),
+					'menu_name'      => __( 'iFrame', 'b-iframe' ),
 					'all_items'      => __( 'ShortCode Generator', 'b-iframe' ),
 					'add_new'        => __( 'Add New ShortCode', 'b-iframe' ),
 					'add_new_item'   => __( 'Add New ShortCode', 'b-iframe' ),

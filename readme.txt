@@ -1,4 +1,4 @@
-=== B Iframe ===
+=== iFrame ===
 Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://gum.co/wpdonate/
 Tags: block, iframe, website embed, embed, url embed
@@ -9,11 +9,11 @@ Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-B Iframe is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes
+iFrame is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes
 
 == Description ==
 
-B Iframe is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes. With features like customizable titles, versatile loading behaviors, full-screen activation, and precise layout controls, B Iframe offers an intuitive and dynamic solution for integrating iframes into your content. Elevate the visual appeal of your iframes with additional design options, allowing you to apply borders and shadows effortlessly.
+iFrame is a powerful WordPress Gutenberg block plugin that revolutionizes the way you embed iframes. With features like customizable titles, versatile loading behaviors, full-screen activation, and precise layout controls, iFrame offers an intuitive and dynamic solution for integrating iframes into your content. Elevate the visual appeal of your iframes with additional design options, allowing you to apply borders and shadows effortlessly.
 
 = Features =
 - **Responsive sizing**: Keep an aspect ratio (16:9, 4:3, 1:1, 9:16, 21:9 or custom) so the iframe scales with the page, or set a fixed height.
@@ -29,7 +29,7 @@ B Iframe is a powerful WordPress Gutenberg block plugin that revolutionizes the 
 
 
 = How to use =
-- First, install the B Iframe plugin
+- First, install the iFrame plugin
 - Add the Iframe block from the block category called 'Widgets' in the Gutenberg editor.
 - You can change block settings from the right-side settings sidebar.
 - Enjoy!
@@ -76,25 +76,25 @@ This plugin uses the Freemius SDK for optional usage tracking and update notific
 
 = From Gutenberg Editor: =
 1. Go to the WordPress Block/Gutenberg Editor
-2. Search For **B Iframe**
-3. Click on the **B Iframe** to add the block
+2. Search For **iFrame**
+3. Click on the **iFrame** to add the block
 
 = Download & Upload: =
-1. Download the **B Iframe** plugin (*.zip file*)
+1. Download the **iFrame** plugin (*.zip file*)
 2. In your admin area, go to the Plugins menu and click on **Add New**
 3. Click on **Upload Plugin** and choose the **`b-iframe.zip`** file and click on **Install Now**
 4. Activate the plugin and Enjoy!
 
 = Manually: =
-1. Download and upload the **B Iframe** plugin to the **`/wp-content/plugins/`** directory
+1. Download and upload the **iFrame** plugin to the **`/wp-content/plugins/`** directory
 2. Activate the plugin through the Plugins menu in WordPress
 
 
 == Frequently Asked Questions ==
 
-= Is B Iframe free? =
+= Is iFrame free? =
 
-Yes, B Iframe is a free Gutenberg block plugin.
+Yes, iFrame is a free Gutenberg block plugin.
 
 = Does it work with any WordPress theme? =
 
@@ -115,7 +115,7 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Screenshots ==
 
-1. B Iframe
+1. iFrame
 2. Settings
 
 
@@ -136,7 +136,7 @@ That site sends an X-Frame-Options or Content-Security-Policy header that forbid
 * New: Correct iframe permissions (autoplay, fullscreen, picture-in-picture) and referrer policy per provider.
 * New: The editor warns when a site's headers forbid embedding.
 * Improved: The iframe is now rendered server-side — visible without JavaScript, indexable, no layout shift; the frontend script is ~90% smaller.
-* New: ShortCode Generator — build reusable iframes in the block editor (B Iframe menu) and embed them anywhere with [b-iframe id="123"]; edit once, updates everywhere.
+* New: ShortCode Generator — build reusable iframes in the block editor (iFrame menu) and embed them anywhere with [b-iframe id="123"]; edit once, updates everywhere.
 * New: Help & Demos page with a live example and full shortcode reference.
 * Fixed: The [iframe] shortcode was never loaded and did not work.
 * Fixed: allowfullscreen was emitted in a form browsers treat as enabled even when turned off.
@@ -149,7 +149,7 @@ That site sends an X-Frame-Options or Content-Security-Policy header that forbid
 == Source Code ==
 
 The complete, un-minified source code for this plugin's JavaScript and CSS is included in the `src/` directory of the plugin, and is also available on GitHub:
-[**B Iframe on GitHub**](https://github.com/bPlugins/b-iframe)
+[**iFrame on GitHub**](https://github.com/bPlugins/b-iframe)
 
 = Build instructions =
 
