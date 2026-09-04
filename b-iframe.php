@@ -20,6 +20,47 @@ define( 'BIFRM_VERSION', '1.1.0' );
 define( 'BIFRM_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'BIFRM_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
+// Freemius SDK — usage tracking and support, only after the user opts in.
+if ( ! function_exists( 'bi_fs' ) ) {
+    // Create a helper function for easy SDK access.
+    function bi_fs() {
+        global $bi_fs;
+
+        if ( ! isset( $bi_fs ) ) {
+            // Include Freemius SDK.
+            require_once dirname( __FILE__ ) . '/vendor/freemius/start.php';
+
+            $bi_fs = fs_dynamic_init( array(
+                'id'                  => '38487',
+                'slug'                => 'b-iframe',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_6f5f1f8bfd89ff4a6dbba9ff7ea97',
+                'is_premium'          => false,
+                'has_addons'          => false,
+                'has_paid_plans'      => false,
+                'is_org_compliant'    => true,
+                'menu'                => array(
+                    'slug'           => 'bifrm_demo_page',
+                    'first-path'     => 'edit.php?post_type=b-iframe&page=bifrm_demo_page',
+                    'account'        => false,
+                    'support'        => false,
+                    'contact'        => false,
+                    'parent'         => array(
+                        'slug' => 'edit.php?post_type=b-iframe',
+                    ),
+                ),
+            ) );
+        }
+
+        return $bi_fs;
+    }
+
+    // Init Freemius.
+    bi_fs();
+    // Signal that SDK was initiated.
+    do_action( 'bi_fs_loaded' );
+}
+
 // Includes
 require_once BIFRM_DIR_PATH . 'includes/Converter.php';
 require_once BIFRM_DIR_PATH . 'includes/FrameCheck.php';

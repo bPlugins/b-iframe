@@ -68,6 +68,10 @@ Use the following ShortCode to Embed Iframe.
 </pre>
 
 
+== External services ==
+
+This plugin uses the Freemius SDK for optional usage tracking and update notifications. No data is sent unless you explicitly opt in on the consent screen shown after activation — choosing Skip keeps the plugin fully functional with no data shared. When you opt in, basic WordPress environment information and your email are sent to Freemius. Freemius terms: https://freemius.com/terms/ — privacy policy: https://freemius.com/privacy/
+
 == Installation ==
 
 = From Gutenberg Editor: =
@@ -126,6 +130,7 @@ That site sends an X-Frame-Options or Content-Security-Policy header that forbid
 == Changelog ==
 
 = 1.1.0 =
+* New: Optional usage tracking via Freemius — asked once, only active if you opt in.
 * New: Aspect-ratio sizing mode — the iframe keeps its ratio and scales with the page width.
 * New: Page links from YouTube, Vimeo, Dailymotion, Google Maps, Spotify, Loom and Figma are converted to their embeddable form automatically (block and shortcode).
 * New: Correct iframe permissions (autoplay, fullscreen, picture-in-picture) and referrer policy per provider.
